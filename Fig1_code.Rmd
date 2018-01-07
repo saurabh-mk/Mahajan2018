@@ -1,0 +1,304 @@
+---
+title: "Fig 1 and supplementary"
+output:
+  md_document: default
+  word_document: default
+  pdf_document: default
+  html_notebook: default
+---
+
+#### Background
+This is the code corresponding to the Figure 1 in amin text and associated sumpplementary figures. Figure 1 pertains to bacteria wide patterns in CUB and tRNA GCN as a function of rRNA CN. In the corresponding supplementary figures, we have patterns in phylogenetically independent contrasts and patterns in major bacterial clades.
+
+#### Figure 1
+CUB vs rRNA CN; total tRNA gene numbers vs rRNA CN
+
+Read and process the data required for this figure-
+```{r Fig1_read_data }
+library(ape)
+
+full_tree_oi <- read.tree(file = "trees/bacteria_pruned_genome_ids.newick")
+tree_oi <- full_tree_oi
+
+rrnCN_rrnDB <- read.table(file="traits data/rRNA_CN.txt", header = T, row.names = 1, stringsAsFactors = F)
+full_ENCp_data <- read.table(file = "traits data/ENCp.txt", header = T, stringsAsFactors = F)
+full_S_data <- read.table(file = "traits data/S_aawise.txt", header = T, row.names=1, stringsAsFactors = F)
+full_GCN_data <- read.table(file ="traits data/tRNA_GCN.txt", header = T, row.names=1, stringsAsFactors = F)
+
+rrnaCN2 <- rrnCN_rrnDB[tree_oi$tip.label, "rRNA_CN_final"]
+rrnaCN2 <- round(rrnaCN2, digits = 0)
+names(rrnaCN2) <- tree_oi$tip.label
+ENCp_data <- full_ENCp_data[tree_oi$tip.label,]
+Savg_data <- full_S_data[tree_oi$tip.label,"S_avg"]
+names(Savg_data) <- tree_oi$tip.label
+
+GCN_data <- full_GCN_data[tree_oi$tip.label,]
+tRNAs_oi <-setdiff(colnames(GCN_data), c("TGC", "GAT")) #ignore tRNAs associated with rRNA operons
+tRNAtot <- rowSums(x = GCN_data[tRNAs_oi]) #total tRNA genes per genome
+```
+
+Now lets plot CUB metrics against rRNA CNs and tRNA GCNs against rRNA CNs.
+
+We suspected the relations between CUB and rRNA CNs to be non linear. Therefore, we fit saturating models for CUB vs rRNA CN and piecewise linear model to tRNA GCN vs rRNA CN.
+```{r Fig1_analysis }
+ENCp_original <- ENCp_data$deltaENCp
+
+ENCp_lm <- lm(ENCp_original~rrnaCN2)
+ENCp_saturatingMod <- nls(ENCp_original~a + b * rrnaCN2/(c + rrnaCN2), start = list(a=0.1,b=0.25,c=3))
+ENCp_saturatingParams <- coef(ENCp_saturatingMod)
+ENCp_saturating <- ENCp_saturatingParams[1] + ENCp_saturatingParams[2] * rrnaCN2/(ENCp_saturatingParams[3] + rrnaCN2)
+
+valid_Savg <- which(is.finite(Savg_data))
+Savg_original <- Savg_data[valid_Savg]
+rrnaCN2_Savg <- rrnaCN2[valid_Savg]
+
+Savg_lm <- lm(Savg_original~rrnaCN2_Savg)
+Savg_saturatingMod <- nls(Savg_original~a + b * rrnaCN2_Savg/(c + rrnaCN2_Savg), start = list(a=0,b=1.5,c=3))
+Savg_saturatingParams <- coef(Savg_saturatingMod)
+Savg_saturating <- Savg_saturatingParams[1] + Savg_saturatingParams[2] * rrnaCN2_Savg/(Savg_saturatingParams[3] + rrnaCN2_Savg)
+
+library(segmented)
+lm_tRNA_rRNA <- lm(tRNAtot~rrnaCN2)
+seglm_tRNA_rRNA <- segmented.lm(obj = lm_tRNA_rRNA, seg.Z = ~rrnaCN2)
+
+AIC_data <- matrix(data = NA, nrow = 3, ncol = 6, dimnames = list(1:3, c("x", "y", "alternate model", "AIC(linear)",  "AIC(alternate)", "AIC(diff)")))
+AIC_data[1,] <- c("rRNA CN", "deltaENC'", "saturating", AIC(ENCp_lm), AIC(ENCp_saturatingMod), AIC(ENCp_lm) - AIC(ENCp_saturatingMod) )
+AIC_data[2,] <- c("rRNA CN",  "S", "saturating", AIC(Savg_lm), AIC(Savg_saturatingMod), AIC(Savg_lm) - AIC(Savg_saturatingMod))
+AIC_data[3,] <- c("rRNA CN", "tRNA GCN", "piecewise linear", AIC(lm_tRNA_rRNA), AIC(seglm_tRNA_rRNA), AIC(lm_tRNA_rRNA) - AIC(seglm_tRNA_rRNA) )
+print(AIC_data)
+write.csv(x = AIC_data, file = "figures/Mahajan_TableS1.csv")
+```
+
+Lets plot-
+```{r Fig1_plot, echo=F, fig.height=2.7, fig.width=8.1 }
+svg(filename = "figures/Mahajan_Fig1.svg", width = 7.09, height = 2.3)
+par(mfrow=c(1,3), mar=c(4,5,2,2))
+
+plot(x = jitter(rrnaCN2, amount = 0.2), y = ENCp_data$deltaENCp, xlab = "rRNA CN", ylab = expression(paste(Delta, "ENC'")), cex=0.3, col=grey(0.5), ylim = c(-0.05,0.35), cex.axis = 0.8)
+params_ENCp <- coef(ENCp_saturatingMod)
+ENCp_pred <- params_ENCp[1] + params_ENCp[2] * rrnaCN2/(params_ENCp[3] + rrnaCN2)
+points(x = rrnaCN2, y = ENCp_pred, xlab = "rRNA CN", ylab = expression(paste(Delta, "ENC'")), ylim = c(-0.1,0.4), col = "black", pch=19, cex=0.5)
+
+cor_deltaENCp_rRNACN2 <- cor.test(x = rrnaCN2,y = ENCp_data$deltaENCp, alternative = "greater", method = "spearman")
+p_val <- format(cor_deltaENCp_rRNACN2$p.value, digits = 3, scientific = T)
+rho_oi <- round(cor_deltaENCp_rRNACN2$estimate, digits = 2)
+legend("topright", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+legend("bottomright", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+plot(x = jitter(rrnaCN2, amount = 0.2), y = Savg_data, xlab = "rRNA CN", ylab = expression(S[CUB]), cex=0.3, ylim = c(-1,2), col=grey(0.5), cex.axis = 0.8)
+params_Savg <- coef(Savg_saturatingMod)
+Savg_pred <- params_Savg[1] + params_Savg[2] * rrnaCN2/(params_Savg[3] + rrnaCN2)
+points(x = rrnaCN2, y = Savg_pred, xlab = "rRNA CN", ylab = expression(S[CUB]), ylim = c(-1,2), col = "black", pch=19, cex=0.5)
+
+cor_Savg_rRNACN2 <- cor.test(x = rrnaCN2_Savg,y = Savg_original, alternative = "greater", method = "spearman")
+p_val <- format(cor_Savg_rRNACN2$p.value, digits = 3, scientific = T)
+rho_oi <- round(cor_Savg_rRNACN2$estimate, digits = 2)
+legend("topright", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+legend("bottomright", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+plot(x = jitter(rrnaCN2, amount = 0.2), y = tRNAtot, xlab = "rRNA CN", ylab = expression(N[tRNA]), cex=0.3, ylim=c(30,130), col=grey(0.5), cex.axis = 0.8)
+plot(seglm_tRNA_rRNA, add=T)
+
+cor_tRNA_rRNACN2 <- cor.test(x = rrnaCN2,y = tRNAtot, alternative = "greater", method = "spearman")
+p_val <- format(cor_tRNA_rRNACN2$p.value, digits = 3, scientific = T)
+rho_oi <- round(cor_tRNA_rRNACN2$estimate, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+legend("bottomright", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+dev.off()
+```
+
+#### Supplementary Figure 1 (with all data points)
+Supplementary figure showing which points fall outside plot boundary in the main figure.
+```{r FigS1_full_data_shown, echo=T, fig.width=4, fig.height=4 }
+# svg(filename = "figures/Mahajan_FigS1.svg", width = 5, height = 5)
+par(mfrow=c(2,2), mar=c(4,4,2,2))
+
+plot(x = ENCp_data[valid_Savg, "deltaENCp"], y = Savg_original, xlab = expression(paste(Delta, "ENC'")), ylab = expression(S[CUB]), cex=0.3, col=grey(0.5), cex.lab=0.8, cex.axis=0.8)
+abline(lm(Savg_original~ENCp_data[valid_Savg, "deltaENCp"], na.action = na.omit))
+
+cor_deltaENCp_S <- cor.test(x = Savg_original, y = ENCp_data[valid_Savg, "deltaENCp"], alternative = "greater", method = "spearman")
+p_val <- format(cor_deltaENCp_S$p.value, digits = 3, scientific = T)
+rho_oi <- round(cor_deltaENCp_S$estimate, digits = 2)
+legend("bottomright", legend = bquote(rho ~ "=" ~ .(rho_oi)), bty = "n", cex=0.8)
+legend("topleft", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+plot(x = jitter(rrnaCN2, amount = 0.2), y = ENCp_data$deltaENCp, xlab = "rRNA CN", ylab = expression(paste(Delta, "ENC'")), cex=0.3, col=grey(0.5), cex.lab=0.8, cex.axis=0.8, xaxt="n")
+axis(side=1, at=c(2,6,10,14),labels=c(2,6,10,14), tick = T)
+abline(h=-0.05, lty=2,col=grey(0.5))
+abline(h=0.35, lty=2,col=grey(0.5))
+params_v3 <- coef(v3_saturatingMod)
+v3_pred <- params_v3[1] + params_v3[2] * rrnaCN2/(params_v3[3] + rrnaCN2)
+points(x = rrnaCN2, y = v3_pred, xlab = "rRNA CN", ylab = expression(paste(Delta, "ENC'")), ylim = c(-0.1,0.4), col = "black", pch=19, cex=0.5)
+
+cor_deltaENCp_rRNACN2 <- cor.test(x = rrnaCN2,y = ENCp_data$deltaENCp, alternative = "greater", method = "spearman")
+p_val <- format(cor_deltaENCp_rRNACN2$p.value, digits = 3, scientific = T)
+rho <- round(cor_deltaENCp_rRNACN2$estimate, digits = 2)
+
+plot(x = jitter(rrnaCN2, amount = 0.2), y = Savg_data, xlab = "rRNA CN", ylab = expression(S[CUB]), cex=0.3, col=grey(0.5), cex.lab=0.8, cex.axis=0.8, xaxt="n")
+axis(side=1, at=c(2,6,10,14),labels=c(2,6,10,14), tick = T, cex.axis=0.8)
+abline(h=-1, lty=2,col=grey(0.5))
+abline(h=2, lty=2,col=grey(0.5))
+params_Savg <- coef(Savg_saturatingMod)
+Savg_pred <- params_Savg[1] + params_Savg[2] * rrnaCN2/(params_Savg[3] + rrnaCN2)
+points(x = rrnaCN2, y = Savg_pred, xlab = "rRNA CN", ylab = expression(S[CUB]), ylim = c(-1,2), col = "black", pch=19, cex=0.5)
+
+cor_Savg_rRNACN2 <- cor.test(x = rrnaCN2_Savg,y = Savg_original, alternative = "greater", method = "spearman")
+p_val <- format(cor_Savg_rRNACN2$p.value, digits = 3, scientific = T)
+rho <- round(cor_Savg_rRNACN2$estimate, digits = 2)
+
+plot(x = jitter(rrnaCN2, amount = 0.2), y = tRNAtot, xlab = "rRNA CN", ylab = "tRNA GCN", cex=0.3, col=grey(0.5), cex.lab=0.8, cex.axis=0.8, xaxt="n")
+axis(side=1, at=c(2,6,10,14),labels=c(2,6,10,14), tick = T, cex.axis=0.8)
+abline(h=30, lty=2,col=grey(0.5))
+abline(h=130, lty=2,col=grey(0.5))
+plot(seglm_tRNA_rRNA, add=T)
+
+cor_tRNA_rRNACN2 <- cor.test(x = rrnaCN2,y = tRNAtot, alternative = "greater", method = "spearman")
+p_val <- format(cor_tRNA_rRNACN2$p.value, digits = 3, scientific = T)
+rho <- round(cor_tRNA_rRNACN2$estimate, digits = 2)
+# dev.off()
+```
+#### Supplementary Figure 2
+Supplementary figure showing correlation between trait PICs
+```{r FigS2_PICs_all, fig.width=5, fig.height=4.5 }
+# svg(filename = "figures/Mahajan_FigS2.svg", width = 5, height = 5)
+tree_mod <- drop.tip(tree_oi, tip = which(is.infinite(Savg_data)))
+
+pic_ENCp <- pic(x = ENCp_data[tree_mod$tip.label, "deltaENCp"], phy = tree_mod)
+pic_Savg <- pic(x = Savg_data[tree_mod$tip.label], phy = tree_mod)
+pic_tRNA <- pic(x = tRNAtot[tree_mod$tip.label], phy = tree_mod)
+pic_rrnaCN2 <- pic(x = rrnaCN2[tree_mod$tip.label], phy = tree_mod)
+
+cor_pic_Savg_ENCp <- cor.test(x = pic_ENCp, y = pic_Savg, method="spearman")
+cor_picENCp <- cor.test(x=pic_rrnaCN2,y=pic_ENCp, method="spearman")
+cor_picSavg <- cor.test(x=pic_rrnaCN2,y=pic_Savg, method="spearman")
+cor_pic_tRNA <- cor.test(x=pic_rrnaCN2,y=pic_tRNA)
+
+par(mfrow=c(2,2), mar=c(4,4,2,2))
+
+plot(pic_ENCp, pic_Savg, xlab=expression(paste("PIC (", Delta, "ENC')")), ylab=expression(paste("PIC (", S[CUB],")")), cex=0.3, ylim=c(-1.5,1.5), xlim=c(-0.25,0.25), col=grey(0.5), cex.lab=0.8, cex.axis=0.8)
+p_val <- format(x = cor_pic_Savg_ENCp$p.val, digits = 2, scientific = T)
+rho_oi <- format(x = cor_pic_Savg_ENCp$estimate, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+legend("bottomright", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+plot(pic_rrnaCN2, pic_ENCp,xlab="PIC (rRNA CN)", ylab=expression(paste("PIC (", Delta, "ENC')")), cex=0.3, xlim=c(-7.5,7.5), ylim=c(-0.25,0.25), col=grey(0.5), cex.lab=0.8, cex.axis=0.8)
+p_val <- format(x = cor_picv3$p.val, digits = 2,scientific = T)
+rho_oi <- format(x = cor_picv3$estimate, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+legend("bottomright", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+plot(pic_rrnaCN2, pic_Savg, xlab="PIC (rRNA CN)", ylab=expression(paste("PIC (", S[CUB],")")), cex=0.3, xlim=c(-7.5,7.5), ylim=c(-1.5,1.5), col=grey(0.5), cex.lab=0.8, cex.axis=0.8)
+p_val <- format(x = cor_picSavg$p.val, digits = 2,scientific = T)
+rho_oi <- format(x = cor_picSavg$estimate, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+legend("bottomright", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+plot(pic_rrnaCN2, pic_tRNA, xlab="PIC (rRNA CN)", ylab="PIC (tRNA GCN)", cex=0.3, xlim=c(-7.5,7.5), ylim=c(-50,50), col=grey(0.5), cex.lab=0.8, cex.axis=0.8)
+p_val <- format(x = cor_pic_tRNA$p.val, digits = 2,scientific = T)
+rho_oi <- format(x = cor_pic_tRNA$estimate, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+legend("bottomright", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+# dev.off()
+```
+
+#### Supplementary Fig 3
+Supplementary figure showing clade specific trait correlations.
+```{r set_clades }
+clades_oi <- c("Actinobacteria", "Bacteroidetes", "Firmicutes", "Alphaproteo", "Betaproteo", "Gammaproteo")
+lists_oi <- c("3_c0.03_cur", "3_c0.03_cur", "3_c0.03_cur", "3_c0.03_cur", "3_c0.03_cur", "3_c0.03_cur")
+```
+
+Lets analyse and plot-
+```{r FigS3_cladewise, fig.height=12, fig.width=7 }
+# svg(filename = "figures/Mahajan_FigS3.svg", width = 6, height = 10)
+par(mfrow=c(length(clades_oi),3), mar=c(4,5,1,1), oma=c(2,2,2,2))
+
+AIC_data <- matrix(data = NA, nrow = 3*length(clades_oi), ncol = 7, dimnames = list(1:(3*length(clades_oi)), c("clade", "x", "y","alternate model", "AIC(linear)", "AIC(alternate)", "deltaAIC")))
+AIC_cutoff = 4
+for(clade_n in 1:length(clades_oi)){
+    xlab_oi <- c("", "", "", "", "")
+    if(clade_n == length(clades_oi)){
+      xlab_oi <- c("rRNA CN", "rRNA CN", "rRNA CN", "tRNA GCN", "tRNA GCN")
+    }
+    clade <- clades_oi[clade_n]
+    list_num <- lists_oi[clade_n]
+    
+    tips_oi <- read.csv(file = paste0("genome_lists/",clade,"_curated_genomes_list.txt"), stringsAsFactors = F, strip.white = T, header = F)
+    tree_clade <- drop.tip(phy = tree_oi, tip = setdiff(tree_oi$tip.label, tips_oi$V1))
+    
+    rrnaCN2 <- round(rrnCN_rrnDB[tree_clade$tip.label, "rRNA_CN_final"], digits=0)
+    names(rrnaCN2) <- tree_clade$tip.label
+    ENCp_data <- full_ENCp_data[tree_clade$tip.label,]
+    Savg_data <- full_S_data[tree_clade$tip.label,"S_avg"]
+    names(Savg_data) <- tree_clade$tip.label
+    GCN_data <- full_GCN_data[tree_clade$tip.label,]
+    tRNAs_oi <-setdiff(colnames(GCN_data), c("TGC", "GAT")) #ignore tRNAs associated with rRNA operons
+    tRNAtot <- rowSums(x = GCN_data[tRNAs_oi]) #total tRNA genes per row
+
+    plot(x = jitter(rrnaCN2, amount = 0.2), y = ENCp_data$deltaENCp, xlab = xlab_oi[1], ylab = expression(paste(Delta, "ENC'")), cex=0.5, col=grey(0.5), pch=19, cex.axis=0.8, cex.lab=0.8)
+    cor_deltaENCp_rRNACN2 <- cor.test(x = rrnaCN2,y = ENCp_data$deltaENCp, alternative = "greater", method = "spearman")
+    p_val <- format(cor_deltaENCp_rRNACN2$p.value, digits = 3, scientific = T)
+    rho_oi <- round(cor_deltaENCp_rRNACN2$estimate, digits = 2)
+    legend("bottomright", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+    legend("topleft", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+    ENCp_original <- ENCp_data$deltaENCp
+    ENCp_lm <- lm(ENCp_original~rrnaCN2)
+    ENCp_saturatingMod <- nls(ENCp_original~a + b * rrnaCN2/(c + rrnaCN2), start = list(a=0.1,b=0.25,c=3), control = list(maxiter=100, warnOnly=T))
+    AIC_data[(clade_n-1)*3 + 1,] <- c(clade, "rRNA CN", "deltaENC'", "saturating", AIC(ENCp_lm), AIC(ENCp_saturatingMod), AIC(ENCp_lm) - AIC(ENCp_saturatingMod) )
+    
+    if((AIC(ENCp_lm) - AIC(ENCp_saturatingMod)) > AIC_cutoff){
+      ENCp_saturatingParams <- coef(ENCp_saturatingMod)
+      ENCp_saturating <- ENCp_saturatingParams[1] + ENCp_saturatingParams[2] * rrnaCN2/(ENCp_saturatingParams[3] + rrnaCN2)
+      params_ENCp <- coef(ENCp_saturatingMod)
+      ENCp_pred <- params_ENCp[1] + params_ENCp[2] * rrnaCN2/(params_ENCp[3] + rrnaCN2)
+      points(x = rrnaCN2, y = ENCp_pred, xlab = "", ylab = "", col = "black", pch=19, cex=0.5)
+    } else{
+      abline(ENCp_lm)
+    }
+    
+    plot(x = jitter(rrnaCN2, amount = 0.2), y = Savg_data, xlab = xlab_oi[2], ylab = expression(S[CUB]), cex=0.5, col=grey(0.5), pch=19, cex.axis=0.8, cex.lab=0.8)
+    cor_Savg_rRNACN2 <- cor.test(x = rrnaCN2,y = Savg_data, alternative = "greater", method = "spearman")
+    p_val <- format(cor_Savg_rRNACN2$p.value, digits = 3, scientific = T)
+    rho_oi <- round(cor_Savg_rRNACN2$estimate, digits = 2)
+    legend("bottomright", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+    legend("topleft", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+    valid_Savg <- which(is.finite(Savg_data))
+    Savg_original <- Savg_data[valid_Savg]
+    rrnaCN2_Savg <- rrnaCN2[valid_Savg]
+    
+    Savg_lm <- lm(Savg_original~rrnaCN2_Savg)
+    Savg_saturatingMod <- nls(Savg_original~a + b * rrnaCN2_Savg/(c + rrnaCN2_Savg), start = list(a=0,b=1.5,c=3), control = list(maxiter=100, warnOnly=T))
+    AIC_data[(clade_n-1)*3 + 2,] <- c(clade, "rRNA CN",  "S", "saturating", AIC(Savg_lm), AIC(Savg_saturatingMod), AIC(Savg_lm) - AIC(Savg_saturatingMod))
+    if((AIC(Savg_lm) - AIC(Savg_saturatingMod)) > AIC_cutoff){
+      Savg_saturatingParams <- coef(Savg_saturatingMod)
+      Savg_saturating <- Savg_saturatingParams[1] + Savg_saturatingParams[2] * rrnaCN2_Savg/(Savg_saturatingParams[3] + rrnaCN2_Savg)
+      params_Savg <- coef(Savg_saturatingMod)
+      Savg_pred <- params_Savg[1] + params_Savg[2] * rrnaCN2/(params_Savg[3] + rrnaCN2)
+      points(x = rrnaCN2, y = Savg_pred, xlab = "", ylab = "", col = "black", pch=19, cex=0.5)
+    } else{
+      abline(Savg_lm)
+    }
+    
+    plot(x = jitter(rrnaCN2, amount = 0.2), y = tRNAtot, xlab = xlab_oi[3], ylab = "tRNA GCN", cex=0.5, col=grey(0.5), pch=19, cex.axis=0.8, cex.lab=0.8)
+    cor_tRNA_GN_rRNACN2 <- cor.test(x = rrnaCN2,y = tRNAtot, alternative = "greater", method = "spearman")
+    p_val <- format(cor_tRNA_GN_rRNACN2$p.value, digits = 3, scientific = T)
+    rho_oi <- round(cor_tRNA_GN_rRNACN2$estimate, digits = 2)
+    legend("bottomright", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty = "n", cex=0.8)
+    legend("topleft", legend = paste0("p = ", p_val), bty = "n", cex=0.8)
+
+    library(segmented)
+    lm_tRNA_rRNA <- lm(tRNAtot~rrnaCN2)
+    seglm_tRNA_rRNA <- segmented.lm(obj = lm_tRNA_rRNA, seg.Z = ~rrnaCN2, control = seg.control(it.max=20, n.boot = 20))
+    AIC_data[(clade_n-1)*3 + 3,] <- c(clade, "rRNA CN", "tRNA GCN", "piecewise linear", AIC(lm_tRNA_rRNA), AIC(seglm_tRNA_rRNA), AIC(lm_tRNA_rRNA) - AIC(seglm_tRNA_rRNA) )
+    if((AIC(lm_tRNA_rRNA) - AIC(seglm_tRNA_rRNA)) > AIC_cutoff){
+      plot(seglm_tRNA_rRNA, add=T)
+    } else{
+      lm_tRNA_rRNA
+    }
+}
+print(AIC_data)
+# dev.off()
+```

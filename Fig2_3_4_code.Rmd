@@ -1,0 +1,195 @@
+---
+title: "Fig 2, 3, and 4"
+output:
+  md_document: default
+  word_document: default
+  pdf_document: default
+  html_notebook: default
+---
+
+#### Background
+This is the code corrresponding to Figures 2,3, and 4 in main text. These pertain to the impact of growth rate on tRNA gene copy numbers and its relation to amino acid usage.
+
+#### Setup
+Read and process the data required for this figure-
+```{r read_data }
+library(ape)
+
+full_tree_oi <- read.tree(file = "trees/bacteria_pruned_genome_ids.newick")
+tips_oi <- read.csv(file = "genome_lists/Gammaproteo_curated_genomes_list.txt", stringsAsFactors = F, strip.white = T, header = F)
+tree_oi <- drop.tip(phy = full_tree_oi, tip = setdiff(full_tree_oi$tip.label, tips_oi$V1))
+
+rrnCN_rrnDB <- read.table(file="traits_data/rRNA_CN.txt", header = T, row.names = 1, stringsAsFactors = F)
+full_aaUsage_HEG <- read.table(file ="traits_data/aaUsage_HEG.txt", header = T, row.names=1, stringsAsFactors = F)
+full_GCN_data <- read.table(file ="traits_data/tRNA_GCN.txt", header = T, row.names=1, stringsAsFactors = F)
+
+rrnaCN2 <- rrnCN_rrnDB[tree_oi$tip.label, "rRNA_CN_final"]
+rrnaCN2 <- round(rrnaCN2, digits = 0)
+names(rrnaCN2) <- tree_oi$tip.label
+aaUsage_HEG <- full_aaUsage_HEG[tree_oi$tip.label,]
+
+GCN_data <- full_GCN_data[tree_oi$tip.label,]
+tRNAs_oi <-setdiff(colnames(GCN_data), c("TGC", "GAT")) #ignore tRNAs associated with rRNA operons
+tRNAtot <- rowSums(x = GCN_data[tRNAs_oi]) #total tRNA genes per genome
+
+codon_table <- read.csv(file = "codon_aa_map.txt", header = T, stringsAsFactors=F)
+aa_unique <- setdiff(unique(codon_table$aa), c("Stop", "Met", "Trp"))
+redundancy_oi <- sapply(aa_unique, function(x) codon_table[which(codon_table$aa==x), "degen"])
+degen2_aas <- unique(codon_table[codon_table$degen==2, "aa"])
+degen4_aas <- unique(codon_table[codon_table$degen==4, "aa"])
+degen6_aas <- unique(codon_table[codon_table$degen==6, "aa"])
+```
+
+#### Figure 2
+Amino acid specific tRNA GCN vs rRNA CN
+```{r Fig2 }
+anticodons_aa <- sapply(colnames(aaUsage_HEG), function(x) codon_table[which(codon_table$aa==x), "anticodon"])
+
+GCN_aawise_data <- sapply(tree_oi$tip.label, function(x) sapply(aa_unique, function(y) rowSums(GCN_data[x,anticodons_aa[[y]]])))
+GCN_aawise_data <- t(GCN_aawise_data)
+GCN_aawise_data <- cbind(GCN_aawise_data, GCN_data[,"CAT"]) #add data for Met and Trp, amino acids with only one codon
+GCN_aawise_data <- cbind(GCN_aawise_data, GCN_data[,"CCA"])
+colnames(GCN_aawise_data) <- c(aa_unique, "Met", "Trp")
+GCN_aawise_ordered <- GCN_aawise_data[,c("Met", "Trp", aa_unique)]
+
+# svg(filename = "figures/Mahajan_Fig2.svg", width=7, height=8)
+par(mfcol=c(5,4), mar=c(1,2,1,1), oma=c(3,4,5,3))
+
+intercepts_tRNA_GCN_aa <- c()
+intercepts_tRNA_GCN_aa_sd <- c()
+slopes_tRNA_GCN_aa <- c()
+slopes_tRNA_GCN_aa_sd <- c()
+
+corr_coeffs <- sapply(aa_unique, function(x) NA)
+for(aa_oi in aa_unique){
+    plot(jitter(rrnaCN2, amount=0.2), jitter(GCN_aawise_ordered[,aa_oi], amount = 0.2), pch=19, cex=0.5, xlab="", ylab="", xaxt = "n", col=grey(0.5), ylim=c(0,20), cex.axis=1)
+    loess_aa <- loess(GCN_aawise_ordered[,aa_oi]~rrnaCN2, na.action=na.omit)
+    x_order <- order(loess_aa$x)
+    lines(loess_aa$x[x_order], loess_aa$fitted[x_order], col="black", lwd=1)
+
+    lm_aa <- lm(GCN_aawise_ordered[,aa_oi]~rrnaCN2, na.action = na.omit)
+    
+    intercept_oi <- lm_aa$coefficients[1] + lm_aa$coefficients[2] # value at rRNA CN = 1
+    intercepts_tRNA_GCN_aa <- c(intercepts_tRNA_GCN_aa, round(intercept_oi, digits = 3))
+    slopes_tRNA_GCN_aa <- c(slopes_tRNA_GCN_aa, round(lm_aa$coefficients[2], digits = 3))
+    summ_lm_aa <- summary(lm_aa)
+    intercepts_tRNA_GCN_aa_sd <- c(intercepts_tRNA_GCN_aa_sd, round(summ_lm_aa$coefficients[1,2], digits = 2))
+    slopes_tRNA_GCN_aa_sd <- c(slopes_tRNA_GCN_aa_sd, round(summ_lm_aa$coefficients[2,2], digits = 2))
+
+    cor_tRNA_rrnaCN2 <- cor.test(x = rrnaCN2, y = GCN_aawise_ordered[,aa_oi], method = "spearman")
+    pval_tRNA_rrnaCN2 <- format(cor_tRNA_rrnaCN2$p.val, digits = 2, scientific = T)
+    rho_tRNA_rrnaCN2 <- format(cor_tRNA_rrnaCN2$estimate, digits = 2)
+    corr_coeffs[aa_oi] <- rho_tRNA_rrnaCN2
+        
+    legend("topright", legend = bquote(rho ~ "= " ~ .(rho_tRNA_rrnaCN2)), bty="n", cex = 1)
+    legend("bottomright", legend = bquote(p ~ "= " ~ .(pval_tRNA_rrnaCN2)), bty="n", cex = 1)
+    legend("topleft", legend = aa_oi, bty="n", cex = 1.2)
+}
+plot(rrnaCN2, GCN_aawise_ordered[,aa_oi], cex=0, xlab="", ylab="", xaxt = "n", col=grey(0.5), yaxt="n")
+axis(side = 1, at = c(2,6,10,14), cex=1)
+legend("topleft", legend = "loess fit", bty="n", lty=1, cex=1)
+
+title(main="", xlab="rRNA CN", ylab="tRNA GCN", outer=T, line=1, cex.lab=1.5)
+# dev.off()
+
+names(intercepts_tRNA_GCN_aa) <- names(intercepts_tRNA_GCN_aa_sd) <- names(slopes_tRNA_GCN_aa) <- names(slopes_tRNA_GCN_aa_sd) <- aa_unique
+```
+
+#### Figure 3
+Impact of growth rate on tRNA GCN vs amino acid usage
+```{r Fig3, fig.height=3.5, fig.width=7 }
+# svg(filename = "figures/Mahajan_Fig3.svg", width=7, height=3.5)
+par(mfrow=c(1,2), mar=c(4,4,1,1), oma=c(1,1,1,1))
+
+col_oi <- c(rep("coral", length(degen2_aas)+1), rep("black", length(degen4_aas)+length(degen6_aas)))
+
+median_aa_usage <- sapply(aa_unique, function(x) median(aaUsage_HEG[,x]))
+lq_aa_usage <- sapply(aa_unique, function(x) quantile(aaUsage_HEG[,x], probs = 0.25))
+hq_aa_usage <- sapply(aa_unique, function(x) quantile(aaUsage_HEG[,x], probs = 0.75))
+single_rrnaCN <- which(rrnaCN2==1)
+median_aa_basal <- sapply(aa_unique, function(x) median(aaUsage_HEG[single_rrnaCN,x]))
+lq_aa_basal <- sapply(aa_unique, function(x) quantile(aaUsage_HEG[single_rrnaCN,x], probs = 0.25))
+hq_aa_basal <- sapply(aa_unique, function(x) quantile(aaUsage_HEG[single_rrnaCN,x], probs = 0.75))
+
+plot(median_aa_basal, intercepts_tRNA_GCN_aa, xlab="median amino acid usage in HEGs\n(rRNA CN=1)", ylab="tRNA GCN (rRNA CN=1)", pch=19, col=col_oi, xlim=c(0,0.12), ylim=c(-0.2,4.2), cex.lab=0.8, cex.axis=0.8)
+abline(lm(intercepts_tRNA_GCN_aa~median_aa_basal))
+text(median_aa_basal, intercepts_tRNA_GCN_aa, labels = names(median_aa_basal), pos=4, cex=0.7)
+cor_intercepts <- cor.test(x = median_aa_basal, y = intercepts_tRNA_GCN_aa, alternative = "greater", method = "spearman")
+rho_oi <- format(cor_intercepts$estimate, digits = 2)
+p_oi <- format(cor_intercepts$p.value, digits = 2, scientific = T)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty="n", cex=0.8)
+legend("bottomright", legend = c(paste0("p = ", p_oi)), bty="n", cex=0.8)
+arrows(median_aa_basal, intercepts_tRNA_GCN_aa-intercepts_tRNA_GCN_aa_sd, median_aa_basal, intercepts_tRNA_GCN_aa+intercepts_tRNA_GCN_aa_sd, length=0.0, angle=90, code=3, col=col_oi)
+arrows(lq_aa_basal, intercepts_tRNA_GCN_aa, hq_aa_basal, intercepts_tRNA_GCN_aa, length=0.0, angle=90, code=3, col=col_oi)
+
+plot(median_aa_usage, slopes_tRNA_GCN_aa, xlab="median amino acid usage in HEGs", ylab="slope of tRNA GCN vs rRNA CN", pch=19, col=col_oi, xlim=c(0,0.12), ylim=c(0,0.7), cex.lab=0.8, cex.axis=0.8)
+abline(lm(slopes_tRNA_GCN_aa~median_aa_usage))
+text(median_aa_usage, slopes_tRNA_GCN_aa, labels = names(median_aa_usage), pos=4, cex=0.7)
+cor_slopes <- cor.test(x = median_aa_usage, y = slopes_tRNA_GCN_aa, alternative = "greater", method = "spearman")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2, scientific = T)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty="n", cex=0.8)
+legend("bottomright", legend = c(paste0("p = ", p_oi)), bty="n", cex=0.8)
+arrows(median_aa_usage, slopes_tRNA_GCN_aa-slopes_tRNA_GCN_aa_sd, median_aa_usage, slopes_tRNA_GCN_aa+slopes_tRNA_GCN_aa_sd, length=0.0, angle=90, code=3, col=col_oi)
+arrows(lq_aa_usage, slopes_tRNA_GCN_aa, hq_aa_usage, slopes_tRNA_GCN_aa, length=0.0, angle=90, code=3, col=col_oi)
+
+# dev.off()
+```
+
+#### Figure 3, additional analysis
+We test the robustness of these results. We test if correlations hold separately for two fold degenerate amino acids; and if removing Ile, Ala, and Glu (tRNAs associated with rRNA operons) makes a difference.
+```{r Fig3_robustness }
+cor_intercepts <- cor.test(x = median_aa_basal[degen2_aas], y = intercepts_tRNA_GCN_aa[degen2_aas], alternative = "greater", method = "spearman")
+cor_slopes <- cor.test(x = median_aa_basal[degen2_aas], y = slopes_tRNA_GCN_aa[degen2_aas], alternative = "greater", method = "spearman")
+cor_intercepts
+cor_slopes
+
+spl_aas <- setdiff(aa_unique, c("Ile", "Ala", "Glu"))
+
+cor_intercepts <- cor.test(x = median_aa_basal[spl_aas], y = intercepts_tRNA_GCN_aa[spl_aas], alternative = "greater", method = "spearman")
+cor_slopes <- cor.test(x = median_aa_basal[spl_aas], y = slopes_tRNA_GCN_aa[spl_aas], alternative = "greater", method = "spearman")
+cor_intercepts
+cor_slopes
+```
+It does not. The correlation with amino acid usage is still significant.
+
+#### Figure 4
+Anticodon specific tRNA GCN vs rRNA CN
+```{r Fig4 }
+cbb_main <- c(rgb(0,0,0,maxColorValue=255),  rgb(230,159,0,maxColorValue=255), rgb(86,180,233, maxColorValue = 255),
+              rgb(204,121,167,maxColorValue=255),rgb(0,158,115,maxColorValue=255), rgb(213,94,0, maxColorValue = 255),
+              rgb(0,114,178,maxColorValue=255), rgb(240,228,66,maxColorValue=255))
+
+# svg(filename = "figures/Mahajan_Fig4.svg", width=7, height=8)
+par(mfcol=c(5,4), mar=c(1,2,1,1), oma=c(3,4,5,3))
+
+for(aa_oi in aa_unique){
+    ac_n <- 1
+    ac_oi <- anticodons_aa[[aa_oi]][ac_n]
+    plot(jitter(rrnaCN2, amount=0.2), jitter(GCN_data[,ac_oi], amount=0.2), cex=0.3, col=grey(0.5), ylim=c(0,12), xaxt="n", cex.axis=0.8, cex.lab=0.8)
+    loess_codon <- loess(GCN_data[,ac_oi]~rrnaCN2, na.action=na.omit)
+    x_order <- order(loess_codon$x)
+    lines(loess_codon$x[x_order], loess_codon$fitted[x_order], col = grey(0.5), lty=1)
+
+    for(ac_n in 2:redundancy_oi[[aa_oi]][1]){
+        ac_oi <- anticodons_aa[[aa_oi]][ac_n]
+        points(jitter(rrnaCN2, amount=0.2), jitter(GCN_data[,ac_oi], amount=0.2), cex=0.3, col=cbb_main[ac_n], ylim=c(0,12), xaxt="n")
+        loess_codon <- loess(GCN_data[,ac_oi]~rrnaCN2, na.action=na.omit)
+        x_order <- order(loess_codon$x)
+        lines(loess_codon$x[x_order], loess_codon$fitted[x_order], col = cbb_main[ac_n], lty=1)
+    }
+
+    U_anticodons <- sapply(anticodons_aa[[aa_oi]], function(x) gsub(pattern = "T", replacement = "U", x = x))
+    legend("topleft", legend = U_anticodons, col = c(grey(0.5), cbb_main[2:redundancy_oi[[aa_oi]][1]]), pch = 21, cex = 0.7,  bty="n")
+    legend("topright", legend = aa_oi, bty="n", cex = 1.1)
+    #title(main = aa_oi, cex=0.8)
+}
+                       
+plot(rrnaCN2, GCN_aawise_ordered[,aa_oi], cex=0, xlab="", ylab="", xaxt="n", yaxt = "n", col=grey(0.5), ylim=c(0,12))
+legend("topleft", legend = "loess fit", col = cbb_main[1:6], bty = "n", cex=0.8, lty=1)
+axis(side = 1, at=c(2,6,10,14), cex=0.8)
+axis(side = 4)
+
+title(main="", xlab="rRNA CN", ylab="tRNA GCN", outer=T, line=1, cex.lab=1.5)
+# dev.off()
+```

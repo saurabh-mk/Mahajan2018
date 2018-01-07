@@ -1,0 +1,267 @@
+---
+title: "Fig 5 and 6"
+output:
+  md_document: default
+  word_document: default
+  pdf_document: default
+  html_notebook: default
+---
+
+#### Background
+Code corresponding to figure 5 and 6, and supplementary figures. These pertain to impact of growth rate on CUB, and its relation to amino acid usage and tRNA GCN.
+
+#### Setup
+Read and process the data required for this figure-
+```{r read_data }
+library(ape)
+
+full_tree_oi <- read.tree(file = "trees/bacteria_pruned_genome_ids.newick")
+tips_oi <- read.csv(file = "genome_lists/Gammaproteo_curated_genomes_list.txt", stringsAsFactors = F, strip.white = T, header = F)
+tree_oi <- drop.tip(phy = full_tree_oi, tip = setdiff(full_tree_oi$tip.label, tips_oi$V1))
+
+rrnCN_rrnDB <- read.table(file="traits_data/rRNA_CN.txt", header = T, row.names = 1, stringsAsFactors = F)
+full_aaUsage_HEG <- read.table(file ="traits_data/aaUsage_HEG.txt", header = T, row.names=1, stringsAsFactors = F)
+full_GCN_data <- read.table(file ="traits_data/tRNA_GCN.txt", header = T, row.names=1, stringsAsFactors = F)
+full_aaENCp_HEG <- read.table(file ="traits_data/ENCp_HEG_aawise.txt", header = T, row.names=1, stringsAsFactors = F)
+full_aaENCp_rest <- read.table(file ="traits_data/ENCp_rest_aawise.txt", header = T, row.names=1, stringsAsFactors = F)
+full_aaS <- read.table(file ="traits_data/S_aawise.txt", header = T, row.names=1, stringsAsFactors = F)
+
+
+rrnaCN2 <- rrnCN_rrnDB[tree_oi$tip.label, "rRNA_CN_final"]
+rrnaCN2 <- round(rrnaCN2, digits = 0)
+names(rrnaCN2) <- tree_oi$tip.label
+aaUsage_HEG <- full_aaUsage_HEG[tree_oi$tip.label,]
+aaENCp_HEG <- full_aaENCp_HEG[tree_oi$tip.label, ]
+aaENCp_rest <- full_aaENCp_rest[tree_oi$tip.label, ]
+aaS <- full_aaS[tree_oi$tip.label, ]
+  
+GCN_data <- full_GCN_data[tree_oi$tip.label,]
+tRNAs_oi <-setdiff(colnames(GCN_data), c("TGC", "GAT")) #ignore tRNAs associated with rRNA operons
+tRNAtot <- rowSums(x = GCN_data[tRNAs_oi]) #total tRNA genes per genome
+
+codon_table <- read.csv(file = "codon_aa_map.txt", header = T, stringsAsFactors=F)
+aa_unique <- setdiff(unique(codon_table$aa), c("Stop", "Met", "Trp"))
+redundancy_oi <- sapply(aa_unique, function(x) codon_table[which(codon_table$aa==x), "degen"])
+```
+
+#### Figure 5
+Amino acid specific deltaENC' vs rRNA CN
+```{r Fig5 }
+redundancy_mat <- matrix(data = rep(x = c(2,2,2,2,2,2,2,2,2,2,3,4,4,4,4,4,4,6,6), times = nrow(aaENCp_HEG)), nrow = nrow(aaENCp_HEG), ncol = length(aa_unique), byrow = T)
+aaENCp_delta <- (aaENCp_rest - aaENCp_HEG)/(redundancy_mat-1)
+
+intercepts_deltaENC_aa <- c()
+intercepts_deltaENC_aa_sd <- c()
+slopes_deltaENC_aa <- c()
+slopes_deltaENC_aa_sd <- c()
+
+# svg(filename = "figures/Mahajan_Fig5.svg", width=7, height=8)
+par(mfcol=c(5,4), mar=c(2,2,0,1), oma=c(3,4,5,3))
+
+for(aa_oi in aa_unique){
+    if(redundancy_oi[[aa_oi]][1]<4){ylim1 <- -0.6} else {ylim1 <- -0.3}
+    if(redundancy_oi[[aa_oi]][1]<4){ylim2 <- 1} else {ylim2 <- 0.6}
+    
+    plot(jitter(rrnaCN2,amount=0.15), aaENCp_delta[,aa_oi], cex=0.3, xlab="", ylab="", col=grey(0.5), xaxt="n", ylim=c(ylim1,ylim2), cex.axis=1) #
+    loess_aa <- loess(aaENCp_delta[,aa_oi]~rrnaCN2, na.action=na.omit, span = 0.9)
+    x_order <- order(loess_aa$x)
+    lines(loess_aa$x[x_order], loess_aa$fitted[x_order], col="black", lwd=1)
+    abline(a=0,b=0,col=grey(0.5),lty=2)
+    
+    cor_deltaENCp_rrnaCN2 <- cor.test(x = rrnaCN2, y = aaENCp_delta[,aa_oi], alternative = "greater", method = "spearman")
+    pval_deltaENCp_rrnaCN2 <- format(cor_deltaENCp_rrnaCN2$p.val, digits = 2, scientific = T)
+    rho_deltaENCp_rrnaCN2 <- format(cor_deltaENCp_rrnaCN2$estimate, digits = 2)
+    legend("bottomright", legend = bquote(rho ~ "=" ~ .(rho_deltaENCp_rrnaCN2)) , bty="n", cex=1)
+    legend("topright", legend = paste0("p = ", pval_deltaENCp_rrnaCN2), bty="n", cex=1)
+
+    if(cor_deltaENCp_rrnaCN2$p.val<1e-2) {sigCol <- "black"} else {sigCol <- "coral"}
+    legend("topleft", legend = aa_oi, bty="n", cex = 1.2, text.col = sigCol)
+    
+    lm_aa <- lm(aaENCp_delta[,aa_oi]~rrnaCN2)
+    intercept_oi <- lm_aa$coefficients[1] + lm_aa$coefficients[2] # value at rRNA CN = 1
+    intercepts_deltaENC_aa <- c(intercepts_deltaENC_aa, round(intercept_oi, digits = 3))
+    slopes_deltaENC_aa <- c(slopes_deltaENC_aa, round(lm_aa$coefficients[2], digits = 3))
+    summ_lm_aa <- summary(lm_aa)
+    intercepts_deltaENC_aa_sd <- c(intercepts_deltaENC_aa_sd, round(summ_lm_aa$coefficients[1,2], digits = 3))
+    slopes_deltaENC_aa_sd <- c(slopes_deltaENC_aa_sd, round(summ_lm_aa$coefficients[2,2], digits = 3))
+}
+
+names(intercepts_deltaENC_aa) <- names(intercepts_deltaENC_aa_sd) <- names(slopes_deltaENC_aa) <- names(slopes_deltaENC_aa_sd) <- aa_unique
+
+plot(rrnaCN2, aaENCp_delta[,aa_oi], xlab="", ylab="", ylim=c(-0.3,0.6), col=grey(0.5), cex=0, cex.axis=1, xat=c(2,6,10,14))
+axis(side = 4, at = c(0, 0.4), cex = 0.8)
+legend("topleft", legend = "loess fit", bty="n", lty=1)
+
+title(main="", xlab="rRNA CN", ylab=expression(paste(Delta, "ENC'")),outer=T, line=1, cex.lab=1.5)
+# dev.off()
+```
+#### Fig S4
+Codon use comparisons across HEG and other genes, for 2-fold degenerate amino acids.
+```{r FigS4, echo=F,eval=F }
+aas_oi <- c("Tyr", "Asn", "Lys", "Gln")
+ar=1.75
+
+# svg(filename = "figures/Mahajan_FigS4.svg", width=4*ar, height=length(aas_oi)*ar)
+par(mfrow=c(length(aas_oi),4), mar=c(0.5,0.5,0.5,0.5), oma=c(2,2,2,2))
+
+rrnaCN2_norm <- (rrnaCN2-min(rrnaCN2))/(max(rrnaCN2) - min(rrnaCN2))*0.75
+rrnaCN2_red <- rgb(red = 0.4, green = 0, blue = 0.4, alpha = 0.05 + rrnaCN2_norm, maxColorValue = 1)
+rrnaCN2_grey <- rgb(red = 0.3, green = 0.3, blue = 0.3, alpha = 0.05 + rrnaCN2_norm, maxColorValue = 1)
+
+for(aa in aas_oi[1:length(aas_oi)]){
+    codons_oi <- codon_table[which(codon_table$aa==aa), "codon"]
+    expNorm_codFreq_HEG <- exp_codFreq_HEG[,codons_oi]/rowSums(exp_codFreq_HEG[,codons_oi])
+    expNorm_codFreq_rest <- exp_codFreq_rest[,codons_oi]/rowSums(exp_codFreq_rest[,codons_oi])
+    actualNorm_codFreq_HEG <- actual_codFreq_HEG[,codons_oi]/rowSums(actual_codFreq_HEG[,codons_oi])
+    actualNorm_codFreq_rest <- actual_codFreq_rest[,codons_oi]/rowSums(actual_codFreq_rest[,codons_oi])
+    for(codon_oi in codons_oi[1:2]){
+        plot(expNorm_codFreq_rest[,codon_oi], actualNorm_codFreq_rest[,codon_oi], cex=0.5, col=rrnaCN2_grey, xlab="expected", ylab="actual", xaxt="n", yaxt="n", xlim=c(0,1), ylim=c(0,1), pch=21)
+        abline(a=0, b=1)
+        legend(x=-0.15, y=1.05, legend = paste0(codon_oi, "\n(other)"), bty="n")
+        plot(expNorm_codFreq_HEG[,codon_oi], actualNorm_codFreq_HEG[,codon_oi], cex=0.5, col=rrnaCN2_red, xlab="expected", ylab="actual", xaxt="n", yaxt="n", xlim=c(0,1), ylim=c(0,1), pch=21)
+        abline(a=0,b=1, col=rgb(red = 0.5,green = 0,blue = 0.5,alpha = 1, maxColorValue = 1))
+        legend(x=-0.15, y=1.05, legend = paste0(codon_oi, "\n(HEG)"), bty="n")
+    }
+    mtext(text = aa, side = 4, line = 1)
+}
+title(main="", xlab="expected usage frequency", ylab="actual usage frequency", outer=T, line=1, cex.lab=1.4)
+# dev.off()
+```
+
+#### Fig S5
+Amino acid specific S vs rRNA CN
+```{r FigS5 }
+intercepts_S_aa <- c()
+intercepts_S_aa_sd <- c()
+slopes_S_aa <- c()
+slopes_S_aa_sd <- c()
+
+# svg(filename = "figures/Mahajan_FigS5.svg", width=5.5, height=6)
+par(mfcol=c(4,3), mar=c(2,2,0,1), oma=c(3,4,2,3))
+
+degen2_aas <- unique(codon_table[codon_table$degen==2, "aa"])
+aas_oi <- c(degen2_aas, "Ile")
+
+for(aa_oi in aas_oi){
+    valid_aaS <- which(is.finite(aaS[,aa_oi]))
+    aaS_oi <- abs(aaS[valid_aaS,aa_oi])
+
+    ylim1 <- max(min(aa_oi, na.rm = T))
+    ylim2 <- max(aaS_oi, na.rm = T)
+    plot(jitter(rrnaCN2[valid_aaS],amount=0.15), aaS_oi, cex=0.3, xlab="", ylab="", col=grey(0.5), xaxt="n", cex.axis=1.2, ylim=c(0,2.5), cex.axis=1) #
+    loess_aa <- loess(aaS_oi~rrnaCN2[valid_aaS], na.action=na.omit)
+    x_order <- order(loess_aa$x)
+    lines(loess_aa$x[x_order], loess_aa$fitted[x_order], col="black", lwd=1, span=0.9)
+
+    cor_aaS_rrnaCN2 <- cor.test(x = rrnaCN2[valid_aaS], y = aaS_oi, alternative = "greater", method = "spearman")
+    pval_aaS_rrnaCN2 <- format(cor_aaS_rrnaCN2$p.val, digits = 2, scientific = T)
+    rho_aaS_rrnaCN2 <- format(cor_aaS_rrnaCN2$estimate, digits = 2)
+    legend("bottomright", legend = bquote(rho ~ "=" ~ .(rho_aaS_rrnaCN2)) , bty="n", cex=1)
+    legend("topright", legend = paste0("p = ", pval_aaS_rrnaCN2), bty="n", cex=1)
+
+    if(cor_aaS_rrnaCN2$p.val<1e-2) {sigCol <- "black"} else {sigCol <- "coral"}
+    legend("topleft", legend = aa_oi, bty="n", cex = 1.2, text.col = sigCol)
+    
+    lm_aa <- lm(aaS_oi[valid_aaS]~rrnaCN2[valid_aaS])
+    intercept_oi <- lm_aa$coefficients[1] + lm_aa$coefficients[2] # value at rRNA CN = 1
+    intercepts_S_aa <- c(intercepts_S_aa, round(intercept_oi, digits = 3))
+    slopes_S_aa <- c(slopes_S_aa, round(lm_aa$coefficients[2], digits = 3))
+    summ_lm_aa <- summary(lm_aa)
+    intercepts_S_aa_sd <- c(intercepts_S_aa_sd, round(summ_lm_aa$coefficients[1,2], digits = 3))
+    slopes_S_aa_sd <- c(slopes_S_aa_sd, round(summ_lm_aa$coefficients[2,2], digits = 3))
+}
+names(intercepts_S_aa) <- names(intercepts_S_aa_sd) <- names(slopes_S_aa) <- names(slopes_S_aa_sd) <- c(degen2_aas, "Ile")
+
+plot(rrnaCN2[valid_aaS], aaS_oi, xlab="", ylab="", ylim=c(-2,4), col=grey(0.5), yaxt="n", cex=0, cex.axis=1, at=c(2,6,10,14))
+legend("topleft", legend = "loess fit", bty="n", lty=1)
+
+title(main="", xlab="rRNA CN", ylab= expression("S"[CUB]), outer=T, line=1, cex.lab=1.3)
+# dev.off()
+```
+
+#### Figure S6
+Codon use comparison between HEG and other genes, for 4-fold degenerate amino acids.
+```{r FigS6, echo=F, eval=F }
+```
+
+#### Figure 6
+Impact of growth rate on CUB and- amino acid usage and tRNA GCN vs rRNA CN slopes.
+
+We need the slopes of tRNA GCN vs rRNA CN. Lets calculate them again-
+```{r tRNA_vs_rRNA }
+anticodons_aa <- sapply(colnames(aaUsage_HEG), function(x) codon_table[which(codon_table$aa==x), "anticodon"])
+
+GCN_aawise_data <- sapply(tree_oi$tip.label, function(x) sapply(aa_unique, function(y) rowSums(GCN_data[x,anticodons_aa[[y]]])))
+GCN_aawise_data <- t(GCN_aawise_data)
+GCN_aawise_data <- cbind(GCN_aawise_data, GCN_data[,"CAT"]) #add data for Met and Trp, amino acids with only one codon
+GCN_aawise_data <- cbind(GCN_aawise_data, GCN_data[,"CCA"])
+colnames(GCN_aawise_data) <- c(aa_unique, "Met", "Trp")
+GCN_aawise_ordered <- GCN_aawise_data[,c("Met", "Trp", aa_unique)]
+
+slopes_tRNA_GCN_aa <- c()
+slopes_tRNA_GCN_aa_sd <- c()
+
+corr_coeffs <- sapply(aa_unique, function(x) NA)
+for(aa_oi in aa_unique){
+    lm_aa <- lm(GCN_aawise_ordered[,aa_oi]~rrnaCN2, na.action = na.omit)
+    
+    slopes_tRNA_GCN_aa <- c(slopes_tRNA_GCN_aa, round(lm_aa$coefficients[2], digits = 3))
+    summ_lm_aa <- summary(lm_aa)
+    slopes_tRNA_GCN_aa_sd <- c(slopes_tRNA_GCN_aa_sd, round(summ_lm_aa$coefficients[2,2], digits = 2))
+
+}
+names(slopes_tRNA_GCN_aa) <- names(slopes_tRNA_GCN_aa_sd) <- aa_unique
+```
+
+```{r Fig6, fig.width=7, fig.height=7 }
+# svg(filename = "figures/Mahajan_Fig6.svg", width=7, height=7)
+par(mfrow=c(2,2), mar=c(5,5,1,1))
+
+median_aa_usage <- sapply(aa_unique, function(x) median(aaUsage_HEG[,x]))
+single_rrnaCN <- which(rrnaCN2==1)
+median_aa_basal <- sapply(aa_unique, function(x) median(aaUsage_HEG[,x]))
+
+plot(median_aa_usage, slopes_deltaENC_aa, xlab="median amino acid usage in HEGs", ylab=expression(paste("slope of ", Delta, "ENC' vs rRNA CN")), pch=19, xlim=c(0,0.12), ylim=c(-0.03,0.08), col=col_oi, cex.axis=1.1, cex.lab=1.1)
+text(median_aa_usage, slopes_deltaENC_aa, labels = names(median_aa_usage), pos=4, cex=0.9)
+cor_slopes <- cor.test(x = median_aa_usage, y = slopes_deltaENC_aa, method = "spearman", alternative = "less")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty="n", cex=1.1)
+legend("topright", legend = c(paste0("p = ", p_oi)), bty="n", cex=1.1)
+arrows(median_aa_usage, slopes_deltaENC_aa-slopes_deltaENC_aa_sd, median_aa_usage, slopes_deltaENC_aa+slopes_deltaENC_aa_sd, length=0.0, angle=90, code=3, col=col_oi)
+arrows(lq_aa_usage, slopes_deltaENC_aa, hq_aa_usage, slopes_deltaENC_aa, length=0.0, angle=90, code=3, col=col_oi)
+
+plot(median_aa_usage[c(degen2_aas, "Ile")], slopes_S_aa, xlab="median amino acid usage in HEGs", ylab=expression(paste("slope of S"[CUB], " vs rRNA CN")), pch=19, col="coral", xlim=c(0,0.12), ylim=c(-0.05,0.15), cex.axis=1.1, cex.lab=1.1)
+# abline(lm(slopes_aa~median_aa_usage))
+text(median_aa_usage[c(degen2_aas, "Ile")], slopes_S_aa, labels = names(median_aa_usage[c(degen2_aas, "Ile")]), pos=4, cex=0.9)
+cor_slopes <- cor.test(x = median_aa_usage[c(degen2_aas, "Ile")], y = slopes_S_aa, method = "spearman", alternative = "less")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty="n", cex=1.1, text.col = "coral")
+legend("topright", legend = c(paste0("p = ", p_oi)), bty="n", cex=1.1, text.col = "coral")
+arrows(median_aa_usage[c(degen2_aas, "Ile")], slopes_S_aa-slopes_S_aa_sd, median_aa_usage[c(degen2_aas, "Ile")], slopes_S_aa+slopes_S_aa_sd, length=0.0, angle=90, code=3, col="coral")
+arrows(lq_aa_usage[1:11], slopes_S_aa, hq_aa_usage[1:11], slopes_S_aa, length=0.0, angle=90, code=3, col="coral")
+
+plot(slopes_tRNA_GCN_aa, slopes_deltaENC_aa, xlab="slope of tRNA GCN vs rRNA CN", ylab=expression(paste("slope of ", Delta, "ENC' vs rRNA CN")), pch=19, col=col_oi, xlim=c(0,0.75), ylim=c(-0.03,0.08), cex.axis=1.1, cex.lab=1.1)
+#abline(lm(slopes_deltaENC_aa~slopes_tRNA_GCN_aa))
+text(slopes_tRNA_GCN_aa, slopes_deltaENC_aa, labels = names(slopes_tRNA_GCN_aa), pos=4, cex=0.9)
+cor_slopes <- cor.test(x = slopes_tRNA_GCN_aa, y = slopes_deltaENC_aa, method = "spearman", alternative = "less")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty="n", cex=1.1)
+legend("topright", legend = c(paste0("p = ", p_oi)), bty="n", cex=1.1)
+arrows(slopes_tRNA_GCN_aa-slopes_tRNA_GCN_aa_sd, slopes_deltaENC_aa, slopes_tRNA_GCN_aa+slopes_tRNA_GCN_aa_sd, slopes_deltaENC_aa, length=0.0, angle=90, code=3, col=col_oi)
+arrows(slopes_tRNA_GCN_aa, slopes_deltaENC_aa-slopes_deltaENC_aa_sd, slopes_tRNA_GCN_aa, slopes_deltaENC_aa+slopes_deltaENC_aa_sd, length=0.0, angle=90, code=3, col=col_oi)
+    
+plot(slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")], slopes_S_aa, xlab="slope of tRNA GCN vs rRNA CN", ylab=expression(paste("slope of ", S[CUB], " vs rRNA CN")), pch=19, col=col_oi, xlim=c(0,0.75), ylim=c(-0.05, 0.15), cex.axis=1.1, cex.lab=1.1)
+#abline(lm(slopes_S_aa~slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")]))
+text(slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")], slopes_S_aa, labels = names(slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")]), pos=4, cex=0.9)
+cor_slopes <- cor.test(x = slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")], y = slopes_S_aa, method = "spearman", alternative = "less")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2)
+legend("topleft", legend = bquote(rho ~ " = " ~ .(rho_oi)), bty="n", cex=1.1, text.col = "coral")
+legend("topright", legend = c(paste0("p = ", p_oi)), bty="n", cex=1.1, text.col = "coral")
+arrows(slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")]-slopes_tRNA_GCN_aa_sd[c(degen2_aas, "Ile")], slopes_S_aa, slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")]+slopes_tRNA_GCN_aa_sd[c(degen2_aas, "Ile")], slopes_S_aa, length=0.0, angle=90, code=3, col=col_oi)
+arrows(slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")], slopes_S_aa-slopes_S_aa_sd, slopes_tRNA_GCN_aa[c(degen2_aas, "Ile")], slopes_S_aa+slopes_S_aa_sd, length=0.0, angle=90, code=3, col=col_oi)
+# dev.off()
+```

@@ -1,0 +1,200 @@
+---
+title: "Fig 7"
+output:
+  md_document: default
+  word_document: default
+  pdf_document: default
+  html_notebook: default
+---
+
+#### Background
+Code corresponding to Figure 7 in main text. This pertains to the association between CUB in E. coli and translation time differences of individual codons.
+
+#### Setup
+Read and process the data required for this figure-
+```{r read_data }
+library(ape)
+
+codon_table <- read.csv(file = "codon_aa_map.txt", header = T, stringsAsFactors=F)
+aa_unique <- setdiff(unique(codon_table$aa), c("Stop", "Met", "Trp"))
+redundancy_oi <- sapply(aa_unique, function(x) codon_table[which(codon_table$aa==x), "degen"])
+
+degen2_aas <- unique(codon_table[codon_table$degen==2, "aa"])
+degen4_aas <- unique(codon_table[codon_table$degen==4, "aa"])
+degen6_aas <- unique(codon_table[codon_table$degen==6, "aa"])
+
+pos_list <- 1:3
+base_list <- c("A", "C", "G", "T")
+genome_oi <- "GCF_000005845.2_ASM584v2"
+
+acgtFreq_matrix <- read.table(file = paste0("example_codon_data/", genome_oi,"/",genome_oi,"_cds_from_genomic.fna.acgtfreq_matrix"), header = T, sep = "\t", row.names = 1)
+codCnt_matrix <- read.table(file = paste0("example_codon_data/", genome_oi,"/",genome_oi,"_cds_from_genomic.fna.codcnt_matrix"), header = T, sep = "\t", row.names = 1)
+
+decoding_times <- read.table(file = "traits_data/decoding_times.tab", header = T, stringsAsFactors=F)
+```
+
+```{r calculate_CUB_Ecoli }
+ribosomal_rows <- rownames(codCnt_matrix)[grepl("ribosomal subunit protein", rownames(codCnt_matrix))]
+EF_rows <- rownames(codCnt_matrix)[grepl("elongation factor EF-Tu", rownames(codCnt_matrix))]
+RNApol_rows <- rownames(codCnt_matrix)[grepl("\\[protein=DNA-directed RNA polymerase\\]", rownames(codCnt_matrix)) | (grepl("DNA-directed RNA polymerase", rownames(codCnt_matrix)) & grepl("subunit A'", rownames(codCnt_matrix)))  | (grepl("DNA-directed RNA polymerase", rownames(codCnt_matrix)) & grepl("subunit B", rownames(codCnt_matrix)))]
+
+HEG_rows <- c(ribosomal_rows, EF_rows, RNApol_rows)
+remaining_rows <- setdiff(rownames(codCnt_matrix), HEG_rows)
+
+baseCnt_HEG <- matrix(data = NA, nrow = 4, ncol = 3, dimnames = list(base_list, 1:3))
+baseFreq_HEG <- matrix(data = NA, nrow = 4, ncol = 3, dimnames = list(base_list, 1:3))
+codCnt_HEG <- colSums(x = codCnt_matrix[HEG_rows,], na.rm = T)
+codon_all <- colnames(codCnt_matrix)
+for(pos_oi in 1:3){
+    for(base_oi in 1:4){
+        baseCnt_HEG[base_oi, pos_oi] <- sum(codCnt_HEG[sapply(codon_all, function(x) {strsplit(x, split = "")[[1]][pos_oi]==base_list[base_oi]})])
+    }
+}
+#correct for stop codons
+baseCnt_HEG["T",1] <- baseCnt_HEG["T",1] - sum(codCnt_HEG[c("TGA", "TAA", "TAG")])
+baseCnt_HEG["A",2] <- baseCnt_HEG["A",2] - sum(codCnt_HEG[c("TAA", "TAG")])
+baseCnt_HEG["G",2] <- baseCnt_HEG["G",2] - sum(codCnt_HEG[c("TGA")])
+baseCnt_HEG["A",3] <- baseCnt_HEG["A",3] - sum(codCnt_HEG[c("TGA", "TAA")])
+baseCnt_HEG["G",3] <- baseCnt_HEG["G",3] - sum(codCnt_HEG[c("TAG")])
+baseFreq_HEG[,1] <- round(baseCnt_HEG[,1]/colSums(baseCnt_HEG)[1], digits = 3)
+baseFreq_HEG[,2] <- round(baseCnt_HEG[,2]/colSums(baseCnt_HEG)[2], digits = 3)
+baseFreq_HEG[,3] <- round(baseCnt_HEG[,3]/colSums(baseCnt_HEG)[3], digits = 3)
+
+baseCnt_rest <- matrix(data = NA, nrow = 4, ncol = 3, dimnames = list(base_list, 1:3))
+baseFreq_rest <- matrix(data = NA, nrow = 4, ncol = 3, dimnames = list(base_list, 1:3))
+codCnt_rest <- colSums(x = codCnt_matrix[remaining_rows,], na.rm = T)
+for(pos_oi in 1:3){
+    for(base_oi in 1:4){
+        baseCnt_rest[base_oi, pos_oi] <- sum(codCnt_rest[sapply(codon_all, function(x) {strsplit(x, split = "")[[1]][pos_oi]==base_list[base_oi]})])
+    }
+}
+#correct for stop codons
+baseCnt_rest["T",1] <- baseCnt_rest["T",1] - sum(codCnt_rest[c("TGA", "TAA", "TAG")])
+baseCnt_rest["A",2] <- baseCnt_rest["A",2] - sum(codCnt_rest[c("TAA", "TAG")])
+baseCnt_rest["G",2] <- baseCnt_rest["G",2] - sum(codCnt_rest[c("TGA")])
+baseCnt_rest["A",3] <- baseCnt_rest["A",3] - sum(codCnt_rest[c("TGA", "TAA")])
+baseCnt_rest["G",3] <- baseCnt_rest["G",3] - sum(codCnt_rest[c("TAG")])
+baseFreq_rest[,1] <- round(baseCnt_rest[,1]/colSums(baseCnt_rest)[1], digits = 3)
+baseFreq_rest[,2] <- round(baseCnt_rest[,2]/colSums(baseCnt_rest)[2], digits = 3)
+baseFreq_rest[,3] <- round(baseCnt_rest[,3]/colSums(baseCnt_rest)[3], digits = 3)
+
+calc_exp_codon_freq <- function(codon_oi, baseFreqs){
+    b1 <- strsplit(codon_oi, "")[[1]][1]
+    b2 <- strsplit(codon_oi, "")[[1]][2]
+    b3 <- strsplit(codon_oi, "")[[1]][3]
+    return(round(baseFreqs[b1,1]*baseFreqs[b2,2]*baseFreqs[b3,3], digits = 5))
+}
+
+codon_sense <- setdiff(codon_all, c("TGA", "TAA", "TAG", "ATG", "TGG"))
+exp_codFreq_HEG <- sapply(codon_sense, function(x) calc_exp_codon_freq(x,baseFreq_HEG))
+exp_codFreq_rest <- sapply(codon_sense, function(x) calc_exp_codon_freq(x,baseFreq_rest))
+
+chiSq_HEG <- sapply(aa_unique, function(x) 0)
+F_HEG <- sapply(aa_unique, function(x) 0)
+chiSq_rest <- sapply(aa_unique, function(x) 0)
+F_rest <- sapply(aa_unique, function(x) 0)
+
+codNormFreq_HEG <- sapply(codon_sense, function(x) NA)
+codNormFreq_rest <- sapply(codon_sense, function(x) NA)
+exp_codNormFreq_HEG <- sapply(codon_sense, function(x) NA)
+exp_codNormFreq_rest <- sapply(codon_sense, function(x) NA)
+for(aa_oi in aa_unique){
+    codons_oi <- codon_table[codon_table$aa==aa_oi, "codon"]
+    degen_oi <- codon_table[codon_table$aa==aa_oi, "degen"][1]
+    ## Lets get the normalized codon frequencies within each amino acid
+    sum_codCnt_HEG <- sum(codCnt_HEG[codons_oi])
+    sum_codCnt_rest <- sum(codCnt_rest[codons_oi])
+    sum_exp_codFreq_HEG <- sum(exp_codFreq_HEG[codons_oi])
+    sum_exp_codFreq_rest <- sum(exp_codFreq_rest[codons_oi])
+    for(codon_oi in codons_oi){
+        codNormFreq_HEG[codon_oi] <- codCnt_HEG[codon_oi]/sum_codCnt_HEG
+        codNormFreq_rest[codon_oi] <- codCnt_rest[codon_oi]/sum_codCnt_rest        
+        exp_codNormFreq_HEG[codon_oi] <- exp_codFreq_HEG[codon_oi]/sum_exp_codFreq_HEG
+        exp_codNormFreq_rest[codon_oi] <- exp_codFreq_rest[codon_oi]/sum_exp_codFreq_rest
+    }
+    ## Lets get chi squared and F values
+    for(codon_oi in codons_oi){
+        chiSq_HEG[aa_oi] <- chiSq_HEG[aa_oi] + (codNormFreq_HEG[codon_oi] - exp_codNormFreq_HEG[codon_oi])^2/(exp_codNormFreq_HEG[codon_oi])
+        chiSq_rest[aa_oi] <- chiSq_rest[aa_oi] + (codNormFreq_rest[codon_oi] - exp_codNormFreq_rest[codon_oi])^2/(exp_codNormFreq_rest[codon_oi])
+    }
+    chiSq_HEG[aa_oi] <- round(chiSq_HEG[aa_oi]*sum(codCnt_HEG[codons_oi]), digits = 4)
+    chiSq_rest[aa_oi] <- round(chiSq_rest[aa_oi]*sum(codCnt_rest[codons_oi]), digits = 4)
+    F_HEG[aa_oi] <- round((chiSq_HEG[aa_oi] + sum_codCnt_HEG - degen_oi)/(degen_oi*(sum_codCnt_HEG-1)), digits = 4)
+    F_rest[aa_oi] <- round((chiSq_rest[aa_oi] + sum_codCnt_rest - degen_oi)/(degen_oi*(sum_codCnt_rest-1)), digits = 4)
+}
+
+aawise_ENCp_HEG_MG1655 <- round(1/F_HEG, digits = 4)
+aawise_ENCp_rest_MG1655 <- round(1/F_rest, digits = 4)
+
+ENCp_HEG_MG1655 <- sum(2,9/mean(F_HEG[degen2_aas]),1/F_HEG["Ile"],5/mean(F_HEG[degen4_aas]),3/mean(F_HEG[degen6_aas]), na.rm = T)
+ENCp_rest_MG1655 <- sum(2,9/mean(F_rest[degen2_aas]),1/F_rest["Ile"],5/mean(F_rest[degen4_aas]),3/mean(F_rest[degen6_aas]), na.rm = T)
+deltaENCp_MG1655 <- (ENCp_rest_MG1655-ENCp_HEG_MG1655)/ENCp_rest_MG1655
+aawise_deltaENCp_MG1655 <- (aawise_ENCp_rest_MG1655-aawise_ENCp_HEG_MG1655)/(c(2,2,2,2,2,2,2,2,2,2,2,3,4,4,4,4,4,6,6)-1)
+    
+S_CUB  <- sapply(degen2_aas, function(x) 0)
+for(aa_oi in c(degen2_aas, "Ile") ){
+    codons_oi <- codon_table[codon_table$aa==aa_oi, "codon"]
+    S_CUB[aa_oi] <- log((codCnt_HEG[codons_oi[2]]/codCnt_HEG[codons_oi[1]])/(codCnt_rest[codons_oi[2]]/codCnt_rest[codons_oi[1]]))
+}
+
+aawise_S_MG1655 <- round(S_CUB, digits = 4)
+```
+
+#### Figure 7
+CUB and decoding time for E coli
+```{r Fig7, fig.width=7.5, fig.height=2.5}
+max_decoding_times <- sapply(aa_unique, function(x) NA)
+range_decoding_times <- sapply(aa_unique, function(x) NA)
+sigma_decoding_times <- sapply(aa_unique, function(x) NA)
+ratio_decoding_times <- sapply(aa_unique, function(x) NA)
+    
+for(aa_oi in aa_unique){
+    codons_oi <- codon_table[which(codon_table$aa==aa_oi), "codon"]
+    range_decoding_times[aa_oi] <- max(decoding_times[codons_oi, "Ecoli_mu"])-min(decoding_times[codons_oi, "Ecoli_mu"])
+}
+log_range_decoding_times <- log(x = range_decoding_times, base = 10)
+
+GCN_Ecoli <- c(3,1,2,4,4,6,4,3,1,1,3,7,5,6,3,4,4,8,7) #MG1655 from GtRNAdb
+names(GCN_Ecoli) <- names(log_range_decoding_times)
+
+# svg(filename = "figures/Mahajan_Fig7.svg", width = 7.09, height = 2.3)
+par(mfrow=c(1,3), mar=c(5,5,1,1))
+
+#decoding time and tRNA GCN
+plot(GCN_Ecoli, log_range_decoding_times, xlab="tRNA GCN", ylab="log(diff in translation time)", pch=21, col=col_oi, xlim=c(0,10), ylim=c(-4.5,-1.5), cex=1, cex.axis=1, cex.lab=1)
+text(GCN_Ecoli, log_range_decoding_times, labels = names(log_range_decoding_times), pos=4, cex=0.8)
+
+cor_slopes <- cor.test(x = GCN_Ecoli, y = log_range_decoding_times, alternative = "less", method = "spearman")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2)
+legend("bottomright", legend = c(paste0("rho = ", rho_oi), paste0("p = ", p_oi)), bty="n", cex=0.8)
+
+cor_slopes <- cor.test(x = GCN_Ecoli[c(degen2_aas, "Ile")], y = log_range_decoding_times[c(degen2_aas, "Ile")], alternative = "less", method = "spearman")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2)
+legend("bottomleft", legend = c(paste0("rho = ", rho_oi), paste0("p = ", p_oi)), bty="n", text.col="coral", cex=0.8)
+
+#decoding time and deltaENCp
+plot(log_range_decoding_times, aawise_deltaENCp_MG1655, xlab="log(diff in translation time)", ylab=expression(paste(Delta, "ENC'")), pch=21, col=col_oi, xlim=c(-4.5,-1.5), ylim=c(-0.5,0.8), cex=1, cex.axis=1, cex.lab=1) #
+text(log_range_decoding_times, aawise_deltaENCp_MG1655, labels = names(range_decoding_times), pos=2, cex=0.8)
+
+cor_slopes <- cor.test(x = log_range_decoding_times, y = aawise_deltaENCp_MG1655, alternative = "greater", method = "spearman")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2)
+legend("bottomright", legend = c(paste0("rho = ", rho_oi), paste0("p = ", p_oi)), bty="n", cex=0.8)
+
+cor_slopes <- cor.test(x = log_range_decoding_times[c(degen2_aas, "Ile")], y = aawise_deltaENCp_MG1655[c(degen2_aas, "Ile")], alternative = "greater", method = "spearman")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2)
+legend("bottomleft", legend = c(paste0("rho = ", rho_oi), paste0("p = ", p_oi)), bty="n", text.col="coral", cex=0.8)
+
+#decoding time and S
+plot(log_range_decoding_times[c(degen2_aas, "Ile")], abs(aawise_S_MG1655[c(degen2_aas, "Ile")]), xlab="log(diff in translation times)", ylab=expression(S[CUB]), pch=21, col="coral", xlim=c(-4.5,-1.5), ylim=c(-0.1,2), cex=1, cex.axis=1, cex.lab=1) #
+text(log_range_decoding_times[c(degen2_aas, "Ile")], abs(aawise_S_MG1655[c(degen2_aas, "Ile")]), labels = names(aawise_S_MG1655), pos=2, cex=0.8)
+
+cor_slopes <- cor.test(x = log_range_decoding_times[c(degen2_aas, "Ile")], y = abs(aawise_S_MG1655[c(degen2_aas, "Ile")]), alternative = "greater", method = "spearman")
+rho_oi <- format(cor_slopes$estimate, digits = 2)
+p_oi <- format(cor_slopes$p.value, digits = 2, scientific = T)
+legend("bottomright", legend = c(paste0("rho = ", rho_oi), paste0("p = ", p_oi)), bty="n", cex=0.8, text.col="coral")
+# dev.off()
+```
