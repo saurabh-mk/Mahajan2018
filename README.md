@@ -1,4 +1,4 @@
-# Mahajan2018
+# tRNA_CUB_aa
 #### Code and data corresponding to a paper on amino acid specific tRNA gene copy numbers and codon usage bias.
 
 This repository contains-
@@ -8,13 +8,13 @@ This repository contains-
 1. code to generate figures from processed data
 
 * **raw data**
-    1. [lists](https://github.com/saurabh-mk/Mahajan2018/tree/master/genome_lists) of all (and clade specific) genomes used in the study
-    1. [phylogeny](https://github.com/saurabh-mk/Mahajan2018/tree/master/trees) used in the study
-    1. details of all genomes from IMG database ([here](https://github.com/saurabh-mk/Mahajan2018/blob/master/traits_data/all_genomes_IMG_data.txt))
-    1. rrnDB v5.1 (a database of rRNA copy numbers)([here](https://github.com/saurabh-mk/Mahajan2018/blob/master/traits_data/rrnDB-5.1.tsv))
-    1. tRNA gene copy number data ([here](https://github.com/saurabh-mk/Mahajan2018/blob/master/traits_data/tRNA_GCN.txt))
-    1. codon specific translation time for _E. coli_ and _B. subtilis_ ([here](https://github.com/saurabh-mk/Mahajan2018/blob/master/traits_data/decoding_times.tab))
-    1. a codon table file ([here](https://github.com/saurabh-mk/Mahajan2018/blob/master/codon_aa_map.txt))
+    1. lists of all (and clade specific) genomes used in the study
+    1. phylogeny used in the study
+    1. details of all genomes from IMG database
+    1. rrnDB v5.1 (a database of rRNA copy numbers)
+    1. tRNA gene copy number data
+    1. codon specific translation time for _E. coli_ and _B. subtilis_ 
+    1. a codon table file
     
 * **code to process raw data**
     1. a [script](https://github.com/saurabh-mk/Mahajan2018/blob/master/codon_count_calculations_script.sh) to calculate _genewise_ codon counts, base composition, and codon usage metrics like ENC', for multiple genomes
