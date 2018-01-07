@@ -1,0 +1,1038 @@
+"genome_id" "Genome_Name" "rRNA_CN_rrnDB" "rRNA_CN_IMG" "rRNA_CN_final"
+"GCF_000020945.1_ASM2094v1" "Coprothermobacter proteolyticus DSM 5265" 2 2 2
+"GCF_000016905.1_ASM1690v1" "Thermosipho melanesiensis BI429" 4 4 4
+"GCF_000021285.1_ASM2128v1" "Thermosipho africanus TCF52B" 3 3 3
+"GCF_000017545.1_ASM1754v1" "Fervidobacterium nodosum Rt17-B1" 2 2 2
+"GCA_000235405.3_ASM23540v3" "Fervidobacterium pennivorans Ven 5, DSM 9078" 2 2.33 2
+"GCF_000017865.1_ASM1786v1" "Thermotoga lettingae TMO" 1 1 1
+"GCF_000217815.1_ASM21781v1" "Pseudothermotoga thermarum DSM 5069" 1 1 1
+"GCF_000018945.1_ASM1894v1" "Thermotoga neapolitana DSM 4359" 1 1 1
+"GCF_000008545.1_ASM854v1" "Thermotoga maritima MSB8" 1 1 1
+"GCF_000255135.1_ASM25513v1" "Marinitoga piezophila KA3" 3 3 3
+"GCF_000018605.1_ASM1860v1" "Petrotoga mobilis SJ95" 2 2 2
+"GCF_000023325.1_ASM2332v1" "Kosmotoga olearia TBF 19.5.1" 2 2 2
+"GCA_000147715.3_ASM14771v3" "Mesotoga prima MesG1AG4.2" 2 2 2
+"GCF_000212395.1_ASM21239v1" "Thermodesulfobium narugense Na82, DSM 14796" 2 2 2
+"GCF_000020965.1_ASM2096v1" "Dictyoglomus thermophilum H-6-12, ATCC 35947" 2 2 2
+"GCF_000021645.1_ASM2164v1" "Dictyoglomus turgidum DSM 6724" 2 2 2
+"GCF_000266925.1_ASM26692v1" "Anaerobaculum mobile NGA, DSM 13181" 2 2 2
+"GCF_000233775.1_ASM23377v1" "Thermovirga lienii Cas60314, DSM 17291" 3 3 3
+"GCF_000024905.1_ASM2490v1" "Thermanaerovibrio acidaminovorans Su883, DSM 6589" 3 3 3
+"GCA_000210715.1_ASM21071v1" "Synergistetes bacterium SGP1" NA 0 1
+"GCF_000025885.1_ASM2588v1" "Aminobacterium colombiense ALA-1, DSM 12261" 3 3 3
+"GCF_000160495.1_ASM16049v1" "Selenomonas sputigena DSM 20758" NA 4 4
+"GCF_000025305.1_ASM2530v1" "Acidaminococcus fermentans VR4, DSM 20731" 6 6 6
+"GCF_000230275.1_ASM23027v1" "Acidaminococcus intestini RyC-MR95" 3 3 3
+"GCF_000024945.1_ASM2494v1" "Veillonella parvula Te3, DSM 2008" 4 4 4
+"GCF_000092945.1_ASM9294v1" "Thermincola potens JR" 3 3 3
+"GCF_000018425.1_ASM1842v1" "Candidatus Desulforudis audaxviator MP104C" 2 2 2
+"GCF_000024605.1_ASM2460v1" "Ammonifex degensii KC4" 2 2 2
+"GCF_000016165.1_ASM1616v1" "Desulfotomaculum reducens MI-1" 8 9 8
+"GCF_000215085.1_ASM21508v1" "Desulfotomaculum ruminis DL, DSM 2154" 5 5 5
+"GCA_000010565.1_ASM1056v1" "Pelotomaculum thermopropionicum SI" NA 2 2
+"GCA_000233715.3_ASM23371v3" "Desulfotomaculum gibsoniae Groll, DSM 7213" 8 8 8
+"GCF_000024205.1_ASM2420v1" "Desulfotomaculum acetoxidans 5575, DSM 771" 10 10 10
+"GCF_000012865.1_ASM1286v1" "Carboxydothermus hydrogenoformans Z-2901" 4 4 4
+"GCF_000092405.1_ASM9240v1" "Syntrophothermus lipocalidus DSM 12680" 2 2 2
+"GCF_000014725.1_ASM1472v1" "Syntrophomonas wolfei Goettingen, DSM 2245B" 3 6.33 3
+"GCF_000013105.1_ASM1310v1" "Moorella thermoacetica ATCC 39073" 1 1 1
+"GCF_000512895.1_ASM51289v1" "Dehalobacter restrictus DSM 9455" 4 4 4
+"GCF_000190635.1_ASM19063v1" "Syntrophobotulus glycolicus FlGlyR, DSM 8271" 4 4 4
+"GCA_000255115.3_ASM25511v3" "Desulfosporosinus acidiphilus SJ4, DSM 22704" 9 8.33 9
+"GCF_000235605.1_ASM23560v1" "Desulfosporosinus orientis Singapore I, DSM 765" 8 8 8
+"GCA_000231385.3_ASM23138v3" "Desulfosporosinus meridiei S10, DSM 13257" 11 10.33 11
+"GCA_000243135.3_ASM24313v3" "Desulfitobacterium dichloroeliminans LMG P-21439" 6 6 6
+"GCA_000243155.3_ASM24315v3" "Desulfitobacterium dehalogenans JW/IU-DC1, ATCC 51507" 6 6 6
+"GCF_000010045.1_ASM1004v1" "Desulfitobacterium hafniense Y51" 6 6 6
+"GCA_000231405.3_ASM23140v3" "Desulfitobacterium metallireducens 853-15A, DSM 15288" 8 8 8
+"GCF_000019165.1_ASM1916v1" "Heliobacterium modesticaldum Ice1" 10 10 10
+"GCF_000213255.1_ASM21325v1" "Mahella australiensis 50-1 BON, DSM 15567" 3 3 3
+"GCF_000007085.1_ASM708v1" "Caldanaerobacter subterraneus tengcongensis MB4T" 4 4 4
+"GCA_000147695.3_ASM14769v3" "Thermoanaerobacter wiegelii Rt8.B1" 4 4 4
+"GCF_000019085.1_ASM1908v1" "Thermoanaerobacter pseudethanolicus 39E, ATCC 33223" 4 5.33 4
+"GCF_000092965.1_ASM9296v1" "Thermoanaerobacter mathranii mathranii A3, DSM 11426" 4 4 4
+"GCA_000189775.3_ASM18977v3" "Thermoanaerobacterium xylanolyticum LX-11, DSM 7097" 5 5 5
+"GCF_000328545.1_ASM32854v1" "Thermoanaerobacterium thermosaccharolyticum M0795" 5 4.33 5
+"GCF_000145615.1_ASM14561v1" "Thermoanaerobacterium thermosaccharolyticum DSM 571" 5 4 5
+"GCA_000013845.1_ASM1384v1" "Clostridium perfringens SM101" 10 10 10
+"GCF_000013285.1_ASM1328v1" "Clostridium perfringens ATCC 13124" 8 8 8
+"GCF_000016965.1_ASM1696v1" "Clostridium beijerinckii NCIMB 8052" 14 14.33 14
+"GCF_000020285.1_ASM2028v1" "Clostridium botulinum E3 Alaska E43" 11 11.33 11
+"GCF_000016505.1_ASM1650v1" "Clostridium kluyveri DSM 555" 7 6.67 7
+"GCF_000143685.1_ASM14368v1" "Clostridium ljungdahlii PETC, DSM 13528" 9 9 9
+"GCF_000007625.1_ASM762v1" "Clostridium tetani Massachusetts E88" 6 6 6
+"GCF_000019545.1_ASM1954v1" "Clostridium botulinum sv. A BoNT/A3 Loch Maree" 9 9 9
+"GCF_000204565.1_ASM20456v1" "Clostridium botulinum sv. Type C/D BKT015925" 10 10 10
+"GCF_000014125.1_ASM1412v1" "Clostridium novyi NT" 10 9.67 10
+"GCF_000145275.1_ASM14527v1" "Clostridium cellulovorans 743B, ATCC 35296" 9 9.33 9
+"GCF_000191905.1_ASM19190v1" "Clostridium acetobutylicum EA 2018" 11 11 11
+"GCF_000024105.1_ASM2410v1" "Anaerococcus prevotii PC 1, DSM 20548" 4 4 4
+"GCF_000010185.1_ASM1018v1" "Finegoldia magna ATCC 29328" 4 4 4
+"GCF_000163895.2_ASM16389v2" "Filifactor alocis ATCC 35896" 4 4 4
+"GCF_000196455.1_ASM19645v1" "Clostridium sticklandii DSM 519" 6 6 6
+"GCF_000085225.1_ASM8522v1" "Clostridium difficile CD196" 10 9.67 10
+"GCF_000016985.1_ASM1698v1" "Alkaliphilus metalliredigens QYMF" 10 10.33 10
+"GCF_000018325.1_ASM1832v1" "Alkaliphilus oremlandii OhILAs" 8 8.67 8
+"GCF_000024405.1_ASM2440v1" "Sebaldella termitidis ATCC 33386" 4 4.33 4
+"GCF_000023905.1_ASM2390v1" "Leptotrichia buccalis C-1013-b, DSM 1135" 5 5 5
+"GCF_000024565.1_ASM2456v1" "Streptobacillus moniliformis 9901, DSM 12112" 5 5.33 5
+"GCF_000165505.1_ASM16550v1" "Ilyobacter polytropus CuHBu1, DSM 2926" 8 8.67 8
+"GCF_000007325.1_ASM732v1" "Fusobacterium nucleatum nucleatum ATCC 25586" 5 4 5
+"GCF_000158275.2_ASM15827v2" "Fusobacterium nucleatum animalis 7_1" 5 0.67 5
+"GCF_000027145.1_ASM2714v1" "Listeria seeligeri sv. 1/2b SLCC3954" 6 6 6
+"GCF_000060285.1_ASM6028v1" "Listeria welshimeri sv. 6b, SLCC5334" 6 6 6
+"GCF_000196035.1_ASM19603v1" "Listeria monocytogenes sv. 1/2a EGD-e" 6 6 6
+"GCF_000252975.1_ASM25297v1" "Listeria ivanovii ivanovii PAM 55" 6 6 6
+"GCF_000168635.2_ASM16863v2" "Listeria monocytogenes sv. 1/2a J0161" 5 5 5
+"GCF_000008285.1_ASM828v1" "Listeria monocytogenes sv. 4b F2365" 6 6 6
+"GCF_000091405.1_ASM9140v1" "Lactobacillus johnsonii FI9785" 4 4 4
+"GCF_000014425.1_ASM1442v1" "Lactobacillus gasseri ATCC 33323" 6 6.33 6
+"GCF_000191165.1_ASM19116v1" "Lactobacillus delbrueckii bulgaricus 2038" 9 9 9
+"GCF_000182835.1_ASM18283v1" "Lactobacillus delbrueckii bulgaricus ND02" 9 9 9
+"GCF_000091765.1_ASM9176v1" "Lactobacillus crispatus ST1" NA 4 4
+"GCF_000214785.1_ASM21478v1" "Lactobacillus kefiranofaciens ZW3" 4 4 4
+"GCF_000189515.1_ASM18951v1" "Lactobacillus helveticus H10" 4 4 4
+"GCF_000011985.1_ASM1198v1" "Lactobacillus acidophilus NCFM" 4 4.33 4
+"GCF_000182855.2_ASM18285v1" "Lactobacillus amylovorus GRL 1112" NA 4 4
+"GCF_000026065.1_ASM2606v1" "Lactobacillus sakei sakei 23K" 7 7 7
+"GCF_000011045.1_ASM1104v1" "Lactobacillus rhamnosus GG" 5 5 5
+"GCF_000233755.1_ASM23375v1" "Lactobacillus rhamnosus K, ATCC 8530" 5 5 5
+"GCF_000155515.2_ASM15551v2" "Lactobacillus paracasei 8700:2" 5 0.67 5
+"GCF_000008925.1_ASM892v1" "Lactobacillus salivarius salivarius UCC118" 7 7 7
+"GCF_000014505.1_ASM1450v1" "Pediococcus pentosaceus ATCC 25745" 5 5.33 5
+"GCA_000237995.2_ASM23799v2" "Pediococcus claussenii P06, ATCC BAA-344" 4 4 4
+"GCF_000203855.3_ASM20385v3" "Lactobacillus plantarum WCFS1" 5 5.33 5
+"GCF_000014465.1_ASM1446v1" "Lactobacillus brevis ATCC 367" 5 5.33 5
+"GCF_000225325.1_ASM22532v1" "Lactobacillus sanfranciscensis TMW 1.1304" 7 7 7
+"GCF_000219805.1_ASM21980v1" "Weissella koreensis KACC 15510" 5 5 5
+"GCF_000014385.1_ASM1438v1" "Oenococcus oeni PSU-1" 2 2.33 2
+"GCF_000234825.3_ASM23482v3" "Leuconostoc mesenteroides mesenteroides J18" 4 4 4
+"GCF_000092505.1_ASM9250v1" "Leuconostoc kimchii IMSNU11154" 4 4 4
+"GCF_000026405.1_ASM2640v1" "Leuconostoc citreum KM20" 4 4 4
+"GCF_000159455.2_ASM15945v2" "Lactobacillus reuteri SD2112, ATCC 55730" 6 6 6
+"GCF_000010145.1_ASM1014v1" "Lactobacillus fermentum IFO 3956" 5 5 5
+"GCF_000006865.1_ASM686v1" "Lactococcus lactis lactis Il1403" 6 6 6
+"GCF_000009425.1_ASM942v1" "Lactococcus lactis cremoris MG1363" 6 4.67 6
+"GCF_000014545.1_ASM1454v1" "Lactococcus lactis cremoris SK11" 6 7 6
+"GCF_000269925.1_ASM26992v1" "Lactococcus garvieae sv. KG+" 5 5 5
+"GCF_000253335.1_ASM25333v1" "Streptococcus salivarius CCHSS3" 6 6 6
+"GCF_000011845.1_ASM1184v1" "Streptococcus thermophilus CNRZ1066" 6 6 6
+"GCF_000270165.1_ASM27016v1" "Streptococcus pasteurianus ATCC 43144" 5 5 5
+"GCF_000213825.1_ASM21382v1" "Streptococcus parauberis KCTC 11537" 5 5 5
+"GCF_000009545.1_ASM954v1" "Streptococcus uberis 0140J" 5 5 5
+"GCF_000010705.1_ASM1070v1" "Streptococcus dysgalactiae equisimilis sv. G GGS_124" 5 5 5
+"GCF_000219765.1_ASM21976v1" "Streptococcus equi zooepidemicus ATCC 35246" 5 5 5
+"GCF_000020765.1_ASM2076v1" "Streptococcus equi zooepidemicus MGCS10565" 5 5 5
+"GCF_000230295.1_ASM23029v1" "Streptococcus pyogenes Alab49" 6 6 6
+"GCF_000012165.1_ASM1216v1" "Streptococcus pyogenes sv. M28 MGAS6180" 6 6 6
+"GCF_000196055.1_ASM19605v1" "Streptococcus agalactiae sv. III/III NEM316" 7 7 7
+"GCF_000007465.2_ASM746v2" "Streptococcus mutans sv. C UA159" 5 5 5
+"GCF_000164675.2_ASM16467v2" "Streptococcus parasanguinis ATCC 15912" 4 4 4
+"GCF_000253155.1_ASM25315v1" "Streptococcus oralis Uo5" 4 4 4
+"GCF_000027165.1_ASM2716v1" "Streptococcus mitis B6" 4 4 4
+"GCF_000221985.1_ASM22198v1" "Streptococcus pseudopneumoniae IS7493" 1 1 1
+"GCF_000251085.2_ASM25108v2" "Streptococcus pneumoniae ST556" 4 4 4
+"GCF_000019025.1_ASM1902v1" "Streptococcus pneumoniae sv. 19F Taiwan19F-14" 4 4 4
+"GCF_000007045.1_ASM704v1" "Streptococcus pneumoniae R6" 4 4 4
+"GCF_000017005.1_ASM1700v1" "Streptococcus gordonii Challis CH1" 4 4 4
+"GCF_000014205.1_ASM1420v1" "Streptococcus sanguinis SK36" 4 4 4
+"GCF_000018185.1_ASM1818v1" "Streptococcus suis sv. 2 GZ1" 4 4 4
+"GCF_000231865.1_ASM23186v1" "Streptococcus suis SS12" 4 4 4
+"GCF_000231885.1_ASM23188v1" "Streptococcus suis D9" 4 4 4
+"GCF_000283615.1_ASM28361v1" "Tetragenococcus halophilus NBRC 12172" 5 5 5
+"GCF_000166815.1_ASM16681v1" "Enterococcus faecium DO" NA 1 1
+"GCF_000270185.1_ASM27018v1" "Melissococcus plutonius ATCC 35311" NA 4 4
+"GCA_000210115.1_ASM21011v1" "Enterococcus sp. 7L76" NA 1 1
+"GCF_000007785.1_ASM778v1" "Enterococcus faecalis V583" 4 4 4
+"GCF_000172575.2_ASM17257v2" "Enterococcus faecalis OG1RF, ATCC 47077" 4 4 4
+"GCF_000195575.1_ASM19557v1" "Carnobacterium sp. 17-4" 8 8.33 8
+"GCF_000193205.1_ASM19320v1" "Aerococcus urinae ACS-120-V-Col10a" 4 4 4
+"GCA_000017965.1_ASM1796v1" "Lysinibacillus sphaericus sv. H5a5b C3-41" NA 10.33 10.33
+"GCF_000011245.1_ASM1124v1" "Oceanobacillus iheyensis HTE831" 7 7.33 7
+"GCF_000023045.1_ASM2304v1" "Exiguobacterium sp. AT1b" 9 9 9
+"GCF_000177235.2_ASM17723v2" "Bacillus cellulosilyticus N-4, DSM 2522" 10 10 10
+"GCF_000093085.1_ASM9308v1" "Bacillus selenitireducens MLS10" 7 7.33 7
+"GCF_000009825.1_ASM982v1" "Bacillus clausii KSM-K16" 7 7.33 7
+"GCF_000011145.1_ASM1114v1" "Bacillus halodurans C-125" 8 8.33 8
+"GCF_000005825.2_ASM582v2" "Bacillus pseudofirmus OF4" 7 7.33 7
+"GCF_000024685.1_ASM2468v1" "Paenibacillus lautus Y412MC10" 8 8 8
+"GCA_000146875.2_ASM14687v2" "Paenibacillus polymyxa E681" 12 12 12
+"GCF_000235585.1_ASM23558v1" "Paenibacillus terrae HPL-003" 9 9.33 9
+"GCF_000023585.1_ASM2358v1" "Paenibacillus sp. JDR-2" 12 11.67 12
+"GCA_000227705.3_ASM22770v3" "Thermobacillus composti KWC4, DSM 18247" 5 5 5
+"GCF_000218915.1_ASM21891v1" "Paenibacillus mucilaginosus KNP414" 13 13 13
+"GCF_000250655.1_ASM25065v1" "Paenibacillus mucilaginosus 3016" 14 14 14
+"GCF_000010165.1_ASM1016v1" "Brevibacillus brevis NBRC 100599" 15 14.67 15
+"GCF_000092905.1_ASM9290v1" "Kyrpidia tusciae T2, DSM 2912" 5 5 5
+"GCF_000024285.1_ASM2428v1" "Alicyclobacillus acidocaldarius acidocaldarius 104-IA, DSM 446" 6 6 6
+"GCF_000219875.1_ASM21987v1" "Alicyclobacillus acidocaldarius acidocaldarius Tc-4-1" 6 6 6
+"GCA_000242895.3_ASM24289v3" "Bacillus sp. 1NLA3E" 12 12 12
+"GCF_000019045.1_ASM1904v1" "Anoxybacillus flavithermus WK1, DSM 2641" 8 8 8
+"GCF_000166075.1_ASM16607v1" "Geobacillus sp. Y4.1MC1" 10 9 10
+"GCF_000023385.1_ASM2338v1" "Geobacillus sp. WCH70" 10 9.33 10
+"GCF_000009785.1_ASM978v1" "Geobacillus kaustophilus HTA426" 9 9 9
+"GCF_000236605.1_ASM23660v1" "Geobacillus thermoleovorans CCB_US3_UF5" 9 9 9
+"GCF_000015745.1_ASM1574v1" "Geobacillus thermodenitrificans NG80-2" 10 10 10
+"GCF_000015785.1_ASM1578v1" "Bacillus amyloliquefaciens plantarum FZB42" 9 10 9
+"GCF_000221645.1_ASM22164v1" "Bacillus amyloliquefaciens XH7" 7 7 7
+"GCF_000283695.1_ASM28369v1" "Bacillus amyloliquefaciens CAU-B946" 10 10 10
+"GCF_000165925.1_ASM16592v1" "Bacillus atrophaeus 1942" 7 7 7
+"GCF_000186745.1_ASM18674v1" "Bacillus subtilis BSn5" 10 10 10
+"GCF_000227485.1_ASM22748v1" "Bacillus subtilis subtilis RO-NN-1" 10 10 10
+"GCF_000227465.1_ASM22746v1" "Bacillus subtilis spizizenii TU-B-10, DSM 15029" 10 10 10
+"GCF_000017885.4_ASM1788v4" "Bacillus pumilus SAFR-032" 7 7 7
+"GCF_000008425.1_ASM842v1" "Bacillus licheniformis DSM 13 Novozymes" 7 7 7
+"GCF_000017425.1_ASM1742v1" "Bacillus cereus cytotoxis NVH 391-98" 13 13 13
+"GCF_000021305.1_ASM2130v1" "Bacillus cereus G9842" 13 13 13
+"GCF_000193355.1_ASM19335v1" "Bacillus thuringiensis sv. chinensis CT-43" 13 13 13
+"GCF_000092165.1_ASM9216v1" "Bacillus thuringiensis BMB171" 14 14 14
+"GCF_000190515.1_ASM19051v1" "Bacillus thuringiensis sv. finitimus YBT-020" 14 14 14
+"GCF_000008005.1_ASM800v1" "Bacillus cereus ATCC 10987" 12 12 12
+"GCF_000008165.1_ASM816v1" "Bacillus anthracis Sterne" 11 11 11
+"GCF_000021785.1_ASM2178v1" "Bacillus cereus AH820" 12 12 12
+"GCF_000283675.1_ASM28367v1" "Bacillus cereus NC7401" 14 14 14
+"GCF_000018825.1_ASM1882v1" "Bacillus weihenstephanensis KBAB4" 14 14 14
+"GCF_000225265.1_ASM22526v1" "Bacillus megaterium WSH-002" 11 11 11
+"GCF_000025825.1_ASM2582v1" "Bacillus megaterium QM B1551" 12 12.33 12
+"GCF_000217835.1_ASM21783v1" "Bacillus coagulans 2-6" 9 3.67 9
+"GCF_000010585.1_ASM1058v1" "Macrococcus caseolyticus JCSC5402" 4 4.33 4
+"GCF_000185885.1_ASM18588v1" "Staphylococcus pseudintermedius HKU10-03" 6 6.33 6
+"GCF_000009405.1_ASM940v1" "Staphylococcus carnosus carnosus TM300" 5 5 5
+"GCF_000010125.1_ASM1012v1" "Staphylococcus saprophyticus saprophyticus ATCC 15305" 6 6.67 6
+"GCF_000009865.1_ASM986v1" "Staphylococcus haemolyticus JCSC1435" 5 5.33 5
+"GCF_000025085.1_ASM2508v1" "Staphylococcus lugdunensis HKU09-01" 6 6.33 6
+"GCF_000007645.1_ASM764v1" "Staphylococcus epidermidis ATCC 12228" 5 5.33 5
+"GCF_000024585.1_ASM2458v1" "Staphylococcus aureus aureus ED98" 5 5.33 5
+"GCF_000245495.1_ASM24549v1" "Staphylococcus aureus aureus VC40" 5 5.33 5
+"GCF_001602155.1_ASM160215v1" "Erysipelothrix rhusiopathiae Fujisawa" 9 7 9
+"GCF_000210615.1_ASM21061v1" "Eubacterium cylindroides T2-87" NA 1 1
+"GCA_000210735.1_ASM21073v1" "Faecalibacterium prausnitzii L2-6" NA 0.67 1
+"GCF_000179635.2_ASM17963v2" "Ruminococcus albus 7" 4 4 4
+"GCF_000210095.1_ASM21009v1" "Ruminococcus sp. 18P13" NA 1 1
+"GCF_000178115.2_ASM17811v2" "Ethanoligenens harbinense YUAN-3T, DSM 18485" 3 3 3
+"GCF_000178835.2_ASM17883v2" "Cellulosilyticum lentocellum RHM5, DSM 5427" 11 12 11
+"GCA_000210555.1_ASM21055v1" "Coprococcus catus GD/7" NA 0.67 1
+"GCF_000146185.1_ASM14618v1" "Eubacterium eligens ATCC 27750" 5 5 5
+"GCF_000145035.1_ASM14503v1" "Butyrivibrio proteoclasticus B316" 6 6 6
+"GCF_000270305.1_ASM27030v1" "Clostridium sp. SY8519" 4 4 4
+"GCA_000209815.1_ASM20981v1" "Butyrivibrio fibrisolvens 16/4" NA 0 1
+"GCF_000225345.1_ASM22534v1" "Roseburia hominis A2-183, DSM 16839" 4 4 4
+"GCA_000210655.1_ASM21065v1" "Roseburia intestinalis XB6B4" NA 0.67 1
+"GCF_000020605.1_ASM2060v1" "Eubacterium rectale ATCC 33656" 5 5 5
+"GCF_000144625.1_ASM14462v1" "Clostridium saccharolyticum WM1, DSM 2544" 6 6 6
+"GCA_000210535.1_ASM21053v1" "Clostridium cf. saccharolyticum K10" NA 0.67 1
+"GCA_000209895.1_ASM20989v1" "Clostridiales sp. SS3/4" NA 0 1
+"GCF_000018685.1_ASM1868v1" "Clostridium phytofermentans ISDg" 8 8.33 8
+"GCF_000247605.1_ASM24760v1" "Acetobacterium woodii WB1, DSM 1030" 5 5.33 5
+"GCF_000152245.2_ASM15224v2" "Eubacterium limosum KIST612" 5 5.33 5
+"GCF_000025225.2_ASM2522v1" "Clostridiales genomosp. BVAB3 UPII9-5" 2 2 2
+"GCF_000244875.1_ASM24487v1" "Clostridium sp. BNL1100" 8 8 8
+"GCF_000022065.1_ASM2206v1" "Clostridium cellulolyticum H10" 8 8 8
+"GCF_000184925.1_ASM18492v1" "Clostridium thermocellum LQ8, DSM 1313" 4 4 4
+"GCF_000237085.1_ASM23708v1" "Clostridium clariflavum EBR 45, DSM 19732" 6 6 6
+"GCF_000016545.1_ASM1654v1" "Caldicellulosiruptor saccharolyticus DSM 8903" 3 3 3
+"GCF_000166355.1_ASM16635v1" "Caldicellulosiruptor hydrothermalis 108" 3 3 3
+"GCF_000166775.1_ASM16677v1" "Caldicellulosiruptor kronotskyensis 2002" 3 3 3
+"GCF_000166695.1_ASM16669v1" "Caldicellulosiruptor kristjanssonii 177R1B, DSM 12137" 3 3 3
+"GCF_000166335.1_ASM16633v1" "Caldicellulosiruptor owensensis OL" 3 3 3
+"GCF_000145215.1_ASM14521v1" "Caldicellulosiruptor obsidiansis OB47" 3 3 3
+"GCF_000213235.1_ASM21323v1" "Tepidanaerobacter sp. Re1" 2 2 2
+"GCF_000144645.1_ASM14464v1" "Thermosediminibacter oceani JW/IW-1228P, DSM 16646" 3 3 3
+"GCF_000166415.1_ASM16641v1" "Halanaerobium hydrogenoformans" 4 4 4
+"GCF_000165465.1_ASM16546v1" "Halanaerobium praevalens GSL, DSM 2228" 4 4 4
+"GCF_000020485.1_ASM2048v1" "Halothermothrix orenii H 168" 4 3.67 4
+"GCF_000144695.1_ASM14469v1" "Acetohalobium arabaticum Z-7288, DSM 5501" 5 5 5
+"GCF_000020005.1_ASM2000v1" "Natranaerobius thermophilus JW/NM-WN-LF" 4 4 4
+"GCA_000219855.1_ASM21985v1" "Sulfobacillus acidophilus TPY" NA 5 5
+"GCF_000184705.1_ASM18470v1" "Thermaerobacter marianensis 7p75a, DSM 12885" 2 2 2
+"GCF_000009905.1_ASM990v1" "Symbiobacterium thermophilum IAM 14863" 6 6.33 6
+"GCF_000195335.1_ASM19533v1" "Marinithermus hydrothermalis T1, DSM 14884" 3 2.33 3
+"GCF_000183745.1_ASM18374v1" "Oceanithermus profundus 506, DSM 14977" 2 2 2
+"GCF_000092125.1_ASM9212v1" "Meiothermus silvanus VI-R2, DSM 9946" 2 2 2
+"GCF_000024425.1_ASM2442v1" "Meiothermus ruber 21, DSM 1279" 2 2 2
+"GCF_000187005.1_ASM18700v1" "Thermus scotoductus SA-01, ATCC 700910" 1 2 1
+"GCF_000309885.1_ASM30988v1" "Thermus oshimai JL-2" 2 2 2
+"GCF_000236585.1_ASM23658v1" "Thermus sp. CCB_US3_UF1" 2 2 2
+"GCF_000258245.1_ASM25824v1" "Thermus thermophilus JL-18" 2 2 2
+"GCF_000091545.1_ASM9154v1" "Thermus thermophilus HB8" 2 2 2
+"GCF_000186385.1_ASM18638v1" "Deinococcus maricopensis LB-34, DSM 21211" 4 4 4
+"GCF_000317835.1_ASM31783v1" "Deinococcus peraridilitoris KR-200, DSM 19664" 4 4 4
+"GCF_000252445.1_ASM25244v1" "Deinococcus gobiensis I-0, DSM 21396" 5 5 5
+"GCF_000020685.1_ASM2068v1" "Deinococcus deserti VCD115" 4 4 4
+"GCF_000008565.1_ASM856v1" "Deinococcus radiodurans ATCC BAA-816" 3 3 3
+"GCF_000190555.1_ASM19055v1" "Deinococcus proteolyticus MRP, DSM 20540" 3 3 3
+"GCF_000196275.1_ASM19627v1" "Deinococcus geothermalis DSM 11300" 4 4 4
+"GCF_000092425.1_ASM9242v1" "Truepera radiovictrix RQ-24, DSM 17093" 2 2 2
+"GCF_000011385.1_ASM1138v1" "Gloeobacter violaceus PCC 7421" 1 1 1
+"GCF_000013225.1_ASM1322v1" "Synechococcus sp. JA-2-3B'a(2-13)" 2 2 2
+"GCF_000013205.1_ASM1320v1" "Synechococcus sp. JA-3-3Ab" 2 2 2
+"GCF_000063525.1_ASM6352v1" "Synechococcus sp. RCC307" 1 1 1
+"GCF_000014585.1_ASM1458v1" "Synechococcus sp. CC9311" 2 2 2
+"GCF_000063505.1_ASM6350v1" "Synechococcus sp. WH7803" 2 2 2
+"GCF_000195975.1_ASM19597v1" "Synechococcus sp. WH8102" 2 2.33 2
+"GCF_000012625.1_ASM1262v1" "Synechococcus sp. CC9605" 2 2 2
+"GCF_000012505.1_ASM1250v1" "Synechococcus sp. CC9902" 2 2 2
+"GCF_000018585.1_ASM1858v1" "Prochlorococcus sp. MIT9211" NA 1 1
+"GCF_000011465.1_ASM1146v1" "Prochlorococcus marinus pastoris CCMP 1986" 1 2 1
+"GCF_000015665.1_ASM1566v1" "Prochlorococcus sp. MIT9515" 1 1 1
+"GCF_000018065.1_ASM1806v1" "Prochlorococcus sp. MIT9215" 1 1 1
+"GCF_000015965.1_ASM1596v1" "Prochlorococcus sp. MIT9301" 1 1 1
+"GCF_000015645.1_ASM1564v1" "Prochlorococcus sp. AS9601" 1 1 1
+"GCF_000012645.1_ASM1264v1" "Prochlorococcus sp. MIT9312" 1 1 1
+"GCF_000015685.1_ASM1568v1" "Prochlorococcus sp. NATL1A" 1 1 1
+"GCF_000015705.1_ASM1570v1" "Prochlorococcus sp. MIT9303" 2 2 2
+"GCF_000012525.1_ASM1252v1" "Synechococcus elongatus PCC 7942" 2 2 2
+"GCF_000011345.1_ASM1134v1" "Thermosynechococcus elongatus BP-1" 1 1 1
+"GCF_000022045.1_ASM2204v1" "Cyanothece sp. PCC 7425" 2 2 2
+"GCF_000018105.1_ASM1810v1" "Acaryochloris marina MBIC11017" 2 2 2
+"GCF_000014265.1_ASM1426v1" "Trichodesmium erythraeum IMS101" 2 1.67 2
+"GCF_000210375.1_ASM21037v1" "Arthrospira platensis NIES-39" NA 2 2
+"GCF_000020025.1_ASM2002v1" "Nostoc punctiforme PCC 73102" 4 4 4
+"GCA_000204075.1_ASM20407v1" "Anabaena variabilis ATCC 29413" 4 4 4
+"GCF_000196515.1_ASM19651v1" "Nostoc azollae 0708" 4 4 4
+"GCF_000021805.1_ASM2180v1" "Cyanothece sp. PCC 8801" 2 2 2
+"GCF_000017845.1_ASM1784v1" "Cyanothece sp. BH68, ATCC 51142" 2 2 2
+"GCF_000010625.1_ASM1062v1" "Microcystis aeruginosa NIES-843" 2 2 2
+"GCF_000021825.1_ASM2182v1" "Cyanothece sp. PCC 7424" 3 3 3
+"GCF_000147335.1_ASM14733v1" "Cyanothece sp. PCC 7822" 3 3 3
+"GCF_000019485.1_ASM1948v1" "Synechococcus sp. PCC 7002" 2 2 2
+"GCF_000009725.1_ASM972v1" "Synechocystis sp. PCC 6803" 2 2 2
+"GCF_000143165.1_ASM14316v1" "Dehalogenimonas lykanthroporepellens BL-DC-9" 1 1 1
+"GCF_000025585.1_ASM2558v1" "Dehalococcoides mccartyi GT" 1 1 1
+"GCF_000011905.1_ASM1190v1" "Dehalococcoides mccartyi 195" 1 1 1
+"GCF_000025025.1_ASM2502v1" "Dehalococcoides mccartyi VS" 1 1 1
+"GCF_000021685.1_ASM2168v1" "Thermomicrobium roseum DSM 5159" 2 1 2
+"GCF_000024985.1_ASM2498v1" "Sphaerobacter thermophilus 4ac11, DSM 20745" 2 2 2
+"GCF_000025005.1_ASM2500v1" "Thermobaculum terrenum YNP1, ATCC BAA-798" 2 2 2
+"GCA_000018565.1_ASM1856v1" "Herpetosiphon aurantiacus DSM 785" NA 5 5
+"GCF_000021945.1_ASM2194v1" "Chloroflexus aggregans DSM 9485" 3 3 3
+"GCF_000022185.1_ASM2218v1" "Chloroflexus sp. Y-400-fl" 3 3 3
+"GCF_000016665.1_ASM1666v1" "Roseiflexus sp. RS-1" 2 2 2
+"GCF_000017805.1_ASM1780v1" "Roseiflexus castenholzii HLO8, DSM 13941" 2 2 2
+"GCF_000199675.1_ASM19967v1" "Anaerolinea thermophila UNI-1" 2 2 2
+"GCF_000023845.1_ASM2384v1" "Cryptobacterium curtum 12-3, DSM 15641" 3 3 3
+"GCF_000270285.1_ASM27028v1" "Eggerthella sp. YY7918" 2 2 2
+"GCF_000210055.1_ASM21005v1" "Gordonibacter pamelaeae 7-10-1-bT, DSM 19378" NA 1 1
+"GCF_000024265.1_ASM2426v1" "Eggerthella lenta VPI 0255, DSM 2243" 3 3 3
+"GCF_000023885.1_ASM2388v1" "Slackia heliotrinireducens RHS 1, DSM 20476" 2 2 2
+"GCF_000024225.1_ASM2422v1" "Atopobium parvulum IPP 1246, DSM 20469" 1 1.33 1
+"GCF_000143845.1_ASM14384v1" "Olsenella uli VPI, DSM 7084" 1 1 1
+"GCF_000195315.1_ASM19531v1" "Coriobacterium glomerans PW2, DSM 20642" 2 2 2
+"GCF_000177615.2_ASM17761v2" "Frankia symbiont of Datisca glomerata Dg1" 2 2 2
+"GCF_000058485.1_ASM5848v1" "Frankia alni ACN14a" 2 2 2
+"GCF_000013345.1_ASM1334v1" "Frankia sp. CcI3" 2 2 2
+"GCF_000018005.1_ASM1800v1" "Frankia sp. EAN1pec" 3 3 3
+"GCF_000166135.1_ASM16613v1" "Frankia sp. EuI1c" 3 3 3
+"GCF_000015025.1_ASM1502v1" "Acidothermus cellulolyticus 11B" 1 1 1
+"GCF_000023405.1_ASM2340v1" "Brachybacterium faecium 6-10, DSM 4810" 3 3 3
+"GCF_000025205.1_ASM2520v1" "Gardnerella vaginalis 409-05" 2 2 2
+"GCF_000213955.1_ASM21395v1" "Gardnerella vaginalis HMP9231" 2 2 2
+"GCF_000024445.1_ASM2444v1" "Bifidobacterium dentium Bd1" 4 4.33 4
+"GCF_000010425.1_ASM1042v1" "Bifidobacterium adolescentis ATCC 15703" 5 5.33 5
+"GCF_000165905.1_ASM16590v1" "Bifidobacterium bifidum PRL2010" 3 3 3
+"GCF_000213865.1_ASM21386v1" "Bifidobacterium breve ACS-071-V-Sch8b" 3 3 3
+"GCF_000092325.1_ASM9232v1" "Bifidobacterium longum longum JDM301" 3 3 3
+"GCF_000210755.1_ASM21075v1" "Bifidobacterium longum longum F8" NA 1 1
+"GCF_000022705.1_ASM2270v1" "Bifidobacterium animalis lactis Bl-04, ATCC SD5219" 4 4 4
+"GCF_000224965.2_ASM22496v2" "Bifidobacterium animalis lactis BLC1" 4 4 4
+"GCF_000196535.1_ASM19653v1" "Mobiluncus curtisii ATCC 43063" 2 2 2
+"GCF_000092365.1_ASM9236v1" "Arcanobacterium haemolyticum CCM, DSM 20595" 4 4 4
+"GCF_000023105.1_ASM2310v1" "Beutenbergia cavernae HKI 0122, DSM 12333" 2 2.67 2
+"GCF_000218545.1_ASM21854v1" "Cellulomonas gilvus ATCC 13127" 2 2 2
+"GCF_000092865.1_ASM9286v1" "Cellulomonas flavigena 134, DSM 20109" 2 2 2
+"GCF_000024925.1_ASM2492v1" "Sanguibacter keddieii ST-74, DSM 10542" 4 4 4
+"GCF_000024065.1_ASM2406v1" "Jonesia denitrificans 55134, DSM 20603" 5 7.33 5
+"GCF_000215105.1_ASM21510v1" "Isoptericola variabilis 225" 3 3 3
+"GCF_000024965.1_ASM2496v1" "Xylanimonas cellulosilytica XIL07, DSM 15894" 3 3 3
+"GCF_000202635.1_ASM20263v1" "Microbacterium testaceum StLB037" 2 2 2
+"GCF_000007665.1_ASM766v1" "Leifsonia xyli xyli CTCB07" 1 1 1
+"GCF_000063485.1_ASM6348v1" "Clavibacter michiganensis michiganensis NCPPB 382" 2 2 2
+"GCF_000197735.1_ASM19773v1" "Arthrobacter arilaitensis re117, CIP 108037" 6 6 6
+"GCF_000196235.1_ASM19623v1" "Arthrobacter sp. FB24" 5 5 5
+"GCF_000189535.1_ASM18953v1" "Arthrobacter phenanthrenivorans Sphe3" 4 4 4
+"GCF_000022025.1_ASM2202v1" "Arthrobacter chlorophenolicus A6" 5 5 5
+"GCF_000014925.1_ASM1492v1" "Arthrobacter aurescens TC1" 6 6 6
+"GCF_000018885.1_ASM1888v1" "Renibacterium salmoninarum ATCC 33209" 2 2 2
+"GCF_000010285.1_ASM1028v1" "Kocuria rhizophila DC2201" 3 3 3
+"GCF_000164695.2_ASM16469v2" "Rothia dentocariosa ATCC 17931" 3 3.33 3
+"GCF_000011025.1_ASM1102v1" "Rothia mucilaginosa DY-18" 3 3.67 3
+"GCF_000023205.1_ASM2320v1" "Micrococcus luteus NCTC 2665" 2 1.67 2
+"GCF_000017305.1_ASM1730v1" "Kineococcus radiotolerans SRS30216" 4 4 4
+"GCF_000023925.1_ASM2392v1" "Kytococcus sedentarius 541, DSM 20547" 2 2 2
+"GCF_000184685.1_ASM18468v1" "Intrasporangium calvum 7KIP, DSM 43043" 2 2 2
+"GCF_000015265.1_ASM1526v1" "Nocardioides sp. JS614" 2 2 2
+"GCF_000270245.1_ASM27024v1" "Microlunatus phosphovorus NM-1" 1 1 1
+"GCF_000008345.1_ASM834v1" "Propionibacterium acnes KPA171202" 3 3 3
+"GCF_000240055.1_ASM24005v1" "Propionibacterium acnes TypeIA2 P.acn31" 3 3 3
+"GCF_000024345.1_ASM2434v1" "Kribbella flavida IFO 14399, DSM 17836" 2 2 2
+"GCF_000024025.1_ASM2402v1" "Catenulispora acidiphila ID139908, DSM 44928" 3 4 3
+"GCF_000269985.1_ASM26998v1" "Kitasatospora setae KM-6054, NBRC 14216" 9 9 9
+"GCF_000237305.1_ASM23730v1" "Streptomyces cattleya NRRL 8057" 6 6 6
+"GCF_000203835.1_ASM20383v1" "Streptomyces coelicolor A3(2)" 6 6 6
+"GCF_000092385.1_ASM9238v1" "Streptomyces bingchenggensis BCW-1" 6 6 6
+"GCA_000147815.3_ASM14781v3" "Streptomyces violaceusniger Tu 4113" 6 2 6
+"GCF_000010605.1_ASM1060v1" "Streptomyces griseus griseus NBRC 13350" 6 6 6
+"GCF_000213055.1_ASM21305v1" "Streptomyces sp. Tu6071" NA 6 6
+"GCF_000091305.1_ASM9130v1" "Streptomyces scabiei 87.22" 6 6 6
+"GCF_000009765.2_ASM976v2" "Streptomyces avermitilis MA-4680" 6 6 6
+"GCF_000092825.1_ASM9282v1" "Segniliparus rotundus CDC 1076, DSM 44985" 1 1 1
+"GCF_000023145.1_ASM2314v1" "Corynebacterium kroppenstedtii DSM 44385" 3 3 3
+"GCF_000069945.1_ASM6994v1" "Corynebacterium urealyticum DSM 7109" 3 3 3
+"GCF_000006605.1_ASM660v1" "Corynebacterium jeikeium K411" 3 3 3
+"GCF_000177535.2_ASM17753v2" "Corynebacterium resistens DSM 45100" 3 3 3
+"GCF_000179395.2_ASM17939v2" "Corynebacterium variabile DSM 44702" 6 6 6
+"GCF_000022905.1_ASM2290v1" "Corynebacterium aurimucosum CN-1, ATCC 700975" 3 4 3
+"GCF_000215645.1_ASM21564v1" "Corynebacterium ulcerans 809" 4 4 4
+"GCF_000255935.1_ASM25593v1" "Corynebacterium pseudotuberculosis sv. Ovis P54B96" 4 4 4
+"GCF_000152065.1_ASM15206v1" "Corynebacterium pseudotuberculosis I19" 4 4 4
+"GCF_000195815.1_ASM19581v1" "Corynebacterium diphtheriae bv. Gravis" 5 5 5
+"GCF_000255235.1_ASM25523v1" "Corynebacterium diphtheriae HC01" 5 5 5
+"GCF_000011305.1_ASM1130v1" "Corynebacterium efficiens YS-314, DSM 44549" 5 5 5
+"GCF_000011325.1_ASM1132v1" "Corynebacterium glutamicum Nakagawa ATCC 13032" 6 1 6
+"GCF_000214175.1_ASM21417v1" "Amycolicicoccus subflavus DQS3-9A1" 3 3 3
+"GCF_000009805.1_ASM980v1" "Nocardia farcinica IFM 10152" 3 3 3
+"GCF_000284035.1_ASM28403v1" "Nocardia cyriacigeorgica GUH-2" 3 3 3
+"GCF_000196695.1_ASM19669v1" "Rhodococcus equi 103S" 4 4 4
+"GCF_000010105.1_ASM1010v1" "Rhodococcus erythropolis PR4" 5 5 5
+"GCF_000010805.1_ASM1080v1" "Rhodococcus opacus B4" 4 4 4
+"GCF_000014565.1_ASM1456v1" "Rhodococcus jostii RHA1" 4 4 4
+"GCF_000092225.1_ASM9222v1" "Tsukamurella paurometabola 33, DSM 20162" 2 2 2
+"GCF_000024785.1_ASM2478v1" "Gordonia bronchialis 3410, DSM 43247" 2 2 2
+"GCF_000247715.1_ASM24771v1" "Gordonia polyisoprenivorans VH2, DSM 44266" 3 3 3
+"GCA_000230895.3_ASM23089v3" "Mycobacterium rhodesiae NBB3" 2 2 2
+"GCF_000266905.1_ASM26690v1" "Mycobacterium chubuense NBB4" 2 2 2
+"GCF_000016365.1_ASM1636v1" "Mycobacterium gilvum PYR-GCK" 2 2 2
+"GCF_000015305.1_ASM1530v1" "Mycobacterium vanbaalenii PYR-1" 2 2 2
+"GCF_000015405.1_ASM1540v1" "Mycobacterium sp. KMS" 2 2 2
+"GCF_000015005.1_ASM1500v1" "Mycobacterium smegmatis MC2 155" 2 2 2
+"GCF_000214155.1_ASM21415v1" "Mycobacterium sp. JDM601" 2 2 2
+"GCF_000277145.1_ASM27714v1" "Mycobacterium intracellulare MOTT-02" 1 1 1
+"GCF_000014985.1_ASM1498v1" "Mycobacterium avium 104" 1 1 1
+"GCF_000026685.1_ASM2668v1" "Mycobacterium leprae Br4923" 1 1 1
+"GCF_000154605.2_ASM15460v2" "Mycobacterium tuberculosis KZN 605 (XDR)" 1 0.67 1
+"GCF_000153685.2_ASM15368v2" "Mycobacterium tuberculosis Haarlem" 1 1.33 1
+"GCF_000023625.1_ASM2362v1" "Mycobacterium tuberculosis KZN 1435 (MDR)" 1 1 1
+"GCA_000277085.1_ASM27708v1" "Mycobacterium tuberculosis RGTB327" NA 1 1
+"GCF_000224435.1_ASM22443v1" "Mycobacterium tuberculosis CTRI-2" 1 1 1
+"GCA_000013925.1_ASM1392v1" "Mycobacterium ulcerans Agy99" 1 1 1
+"GCF_000069185.1_ASM6918v1" "Mycobacterium abscessus CIP 104536" 1 1 1
+"GCF_000196675.1_ASM19667v1" "Pseudonocardia dioxanivorans CB1190" 3 3 3
+"GCF_000062885.1_ASM6288v1" "Saccharopolyspora erythraea NRRL 2338" 4 5.33 4
+"GCF_000023245.1_ASM2324v1" "Actinosynnema mirum 101, DSM 43827" 5 6 5
+"GCF_000220945.1_ASM22094v1" "Amycolatopsis mediterranei S699, ATCC 13685" 4 4 4
+"GCF_000023865.1_ASM2386v1" "Saccharomonospora viridis P101, DSM 43017" 3 3 3
+"GCF_000196835.1_ASM19683v1" "Amycolatopsis mediterranei U32" 4 4 4
+"GCF_000024365.1_ASM2436v1" "Nakamurella multipartita Y-104, DSM 44233" 2 2 2
+"GCF_000025345.1_ASM2534v1" "Geodermatophilus obscurus G-20, DSM 43160" 3 3 3
+"GCF_000024545.1_ASM2454v1" "Stackebrandtia nassauensis LLR-40K-21, DSM 44728" 2 2 2
+"GCF_000237145.1_ASM23714v1" "Actinoplanes sp. SE50/110" 6 6 6
+"GCF_000016425.1_ASM1642v1" "Salinispora tropica CNB-440" 3 3 3
+"GCF_000018265.1_ASM1826v1" "Salinispora arenicola CNS-205" 3 3 3
+"GCF_000204155.1_ASM20415v1" "Verrucosispora maris AB-18-032" 3 3 3
+"GCF_000177655.2_ASM17765v2" "Micromonospora sp. L5" 3 3 3
+"GCF_000092645.1_ASM9264v1" "Thermobispora bispora R51, DSM 43833" 4 3.33 4
+"GCF_000024865.1_ASM2486v1" "Streptosporangium roseum NI 9100, DSM 43021" 6 8 6
+"GCF_000092985.1_ASM9298v1" "Nocardiopsis dassonvillei dassonvillei DSM 43111" 5 5 5
+"GCF_000012405.1_ASM1240v1" "Thermobifida fusca YX" 4 4 4
+"GCF_000023265.1_ASM2326v1" "Acidimicrobium ferrooxidans ICP, DSM 10331" 2 2.67 2
+"GCF_000025265.1_ASM2526v1" "Conexibacter woesei ID131577, DSM 14684" 1 1 1
+"GCF_000014185.1_ASM1418v1" "Rubrobacter xylanophilus DSM 9941" 1 1 1
+"GCF_000025185.1_ASM2518v1" "Pirellula staleyi DSM 6068" 1 1 1
+"GCF_000196115.1_ASM19611v1" "Rhodopirellula baltica SH 1" 1 1 1
+"GCF_000092105.1_ASM9210v1" "Planctomyces limnophilus Mu 290, DSM 3776" 2 1.33 2
+"GCA_000165715.3_ASM16571v3" "Planctomyces brasiliensis DSM 5305" 2 2 2
+"GCF_000186345.1_ASM18634v1" "Isosphaera pallida IS1B, ATCC 43644" 3 3 3
+"GCA_000242455.3_ASM24245v3" "Singulisphaera acidiphila MOB10, DSM 18658" 8 8 8
+"GCF_000237205.1_ASM23720v1" "Simkania negevensis Z, ATCC VR-1471" 1 1 1
+"GCF_000011565.1_ASM1156v1" "Candidatus Protochlamydia amoebophila UWE25" NA 3 3
+"GCF_000092785.1_ASM9278v1" "Waddlia chondrophila WSU 86-1044" 2 2 2
+"GCF_000253035.1_ASM25303v1" "Parachlamydia acanthamoebae UV7" 3 3.33 3
+"GCF_000006685.1_ASM668v1" "Chlamydia muridarum MoPn / Nigg" 2 2 2
+"GCF_000226605.1_ASM22660v1" "Chlamydia trachomatis A2497" 2 2 2
+"GCF_000011165.1_ASM1116v1" "Chlamydophila pneumoniae J138" 1 1 1
+"GCF_000204135.1_ASM20413v1" "Chlamydophila pecorum E58" 1 1 1
+"GCF_000026025.1_ASM2602v1" "Chlamydophila abortus S26/3" 1 1 1
+"GCF_000191925.1_ASM19192v1" "Chlamydophila psittaci 6BC" 1 1 1
+"GCF_000007605.1_ASM760v1" "Chlamydophila caviae GPIC" 1 1.33 1
+"GCF_000009945.1_ASM994v1" "Chlamydophila felis Fe/C-56" 1 1 1
+"GCF_000025905.1_ASM2590v1" "Coraliomargarita akajimensis DSM 45221" 2 2 2
+"GCF_000019965.1_ASM1996v1" "Opitutus terrae PB90-1" 1 1.33 1
+"GCA_000242935.3_ASM24293v3" "Opitutaceae sp. TAV5" 1 1 1
+"GCF_000019665.1_ASM1966v1" "Methylacidiphilum infernorum V4" 1 1 1
+"GCF_000020225.1_ASM2022v1" "Akkermansia muciniphila ATCC BAA-835" 3 3 3
+"GCF_000143725.1_ASM14372v1" "Brachyspira pilosicoli 95/1000" 1 1 1
+"GCF_000092845.1_ASM9284v1" "Brachyspira murdochii 56-150, DSM 12563" 1 1 1
+"GCF_000022105.1_ASM2210v1" "Brachyspira hyodysenteriae sv. B WA1" 1 1 1
+"GCF_000223215.1_ASM22321v1" "Brachyspira intermedia PWS/A" 1 1 1
+"GCF_000019685.1_ASM1968v1" "Borrelia duttonii Ly" 1 1 1
+"GCF_000012085.1_ASM1208v1" "Borrelia turicatae 91E135" 1 1 1
+"GCF_000165595.2_ASM16559v2" "Borrelia afzelii PKo" NA 1.67 1.67
+"GCF_000222305.1_ASM22230v1" "Borrelia bissettii DN127" 1 1.67 1
+"GCF_000196215.1_ASM19621v1" "Borrelia garinii sv. 4 PBi" 1 1.67 1
+"GCA_000166655.2_ASM16665v1" "Borrelia burgdorferi JD1" 1 1.67 1
+"GCF_000147075.1_ASM14707v1" "Spirochaeta thermophila DSM 6192" 2 2 2
+"GCA_000184345.2_ASM18434v2" "Spirochaeta thermophila Z-1203, DSM 6578" 2 2 2
+"GCA_000242595.3_ASM24259v3" "Spirochaeta africana Z-7692, DSM 8902" 3 3 3
+"GCF_000214355.1_ASM21435v1" "Treponema azotonutricium ZAS-9" 2 2 2
+"GCF_000214375.1_ASM21437v1" "Treponema primitia ZAS-2" 2 2 2
+"GCF_000212415.1_ASM21241v1" "Treponema brennaborense DD5/3, DSM 12168" 4 4 4
+"GCF_000195275.1_ASM19527v1" "Treponema succinifaciens 6091, DSM 2489" 4 4.33 4
+"GCF_000008185.1_ASM818v1" "Treponema denticola ATCC 35405" 2 2 2
+"GCF_000024485.1_ASM2448v1" "Treponema pallidum pallidum Chicago" NA 2 2
+"GCF_000246775.1_ASM24677v1" "Treponema pallidum pertenue CDC2" NA 2 2
+"GCF_000208385.1_ASM20838v1" "Sphaerochaeta coccoides SPN1, DSM 17374" 3 3 3
+"GCF_000190435.1_ASM19043v1" "Sphaerochaeta globosa Buddy" 4 4.67 4
+"GCF_000236685.1_ASM23668v1" "Sphaerochaeta pleomorpha Grapes" 4 5 4
+"GCF_000143985.1_ASM14398v1" "Spirochaeta smaragdinae SEBR 4228, DSM 11293" 2 2 2
+"GCF_000266885.1_ASM26688v1" "Turneriella parva H, DSM 21527" 2 2 2
+"GCF_000017685.1_ASM1768v1" "Leptospira biflexa sv. Patoc Patoc 1 (Paris)" 2 2 2
+"GCF_000007685.1_ASM768v1" "Leptospira interrogans sv. Copenhageni Fiocruz L1-130" 2 1.67 2
+"GCF_000231175.1_ASM23117v1" "Leptospira interrogans sv. LAI IPAV" 2 1.67 2
+"GCF_000013945.1_ASM1394v1" "Leptospira borgpetersenii sv. Hardjo-bovis L550" 2 1.67 2
+"GCF_000024665.1_ASM2466v1" "Fibrobacter succinogenes S85" 3 3 3
+"GCF_000010305.1_ASM1030v1" "Gemmatimonas aurantiaca T-27T" 1 1 1
+"GCF_000020525.1_ASM2052v1" "Chloroherpeton thalassium ATCC 35110" 1 1 1
+"GCF_000020625.1_ASM2062v1" "Prosthecochloris aestuarii SK413, DSM 271" 1 1 1
+"GCF_000020545.1_ASM2054v1" "Chlorobium phaeobacteroides BS1" 2 2 2
+"GCF_000006985.1_ASM698v1" "Chlorobium tepidum TLS" 2 2 2
+"GCF_000020505.1_ASM2050v1" "Chlorobaculum parvum DSM 263" 2 2 2
+"GCF_000020465.1_ASM2046v1" "Chlorobium limicola DSM 245" 2 2 2
+"GCF_000015125.1_ASM1512v1" "Chlorobium phaeobacteroides DSM 266" 2 2 2
+"GCF_000016085.1_ASM1608v1" "Chlorobium phaeovibrioides DSM 265" 1 1 1
+"GCF_000012485.1_ASM1248v1" "Pelodictyon luteolum DSM 273" 2 2 2
+"GCF_000020645.1_ASM2064v1" "Pelodictyon phaeoclathratiforme BU-1" 3 3 3
+"GCF_000012585.1_ASM1258v1" "Chlorobium chlorochromatii CaD3" 1 1 1
+"GCF_000218895.1_ASM21889v1" "Runella slithyformis LSU4, DSM 19594" 2 2 2
+"GCF_000263195.1_ASM26319v1" "Emticicia oligotrophica GPTSA100-15, DSM 17448" 2 2 2
+"GCA_000024525.1_ASM2452v1" "Spirosoma linguale DSM 74" NA 3.67 3.67
+"GCF_000023125.1_ASM2312v1" "Dyadobacter fermentans NS114, DSM 18053" 4 4 4
+"GCF_000166395.1_ASM16639v1" "Leadbetterella byssophila 4M15, DSM 17132" 3 3 3
+"GCF_000014145.1_ASM1414v1" "Cytophaga hutchinsonii ATCC 33406" 3 3 3
+"GCF_000020565.1_ASM2056v1" "Candidatus Amoebophilus asiaticus 5a2" 1 1 1
+"GCF_000183425.1_ASM18342v1" "Marivirga tractuosa H-43, DSM 4126" 2 2 2
+"GCF_000265505.1_ASM26550v1" "Flexibacter litoralis Fx l1, DSM 6794" 3 3 3
+"GCF_000222485.1_ASM22248v1" "Cyclobacterium marinum Raj, DSM 745" 3 3 3
+"GCF_000325705.1_ASM32570v1" "Echinicola vietnamensis KMM 6221, DSM 17526" 4 4 4
+"GCA_000242635.3_ASM24263v3" "Solitalea canadensis USAM 9D, DSM 3403" 4 4 4
+"GCF_000192845.1_ASM19284v1" "Sphingobacterium sp. 21" 4 4 4
+"GCF_000023825.1_ASM2382v1" "Pedobacter heparinus HIM 762-3" 3 2.33 3
+"GCF_000238215.1_ASM23821v1" "Tannerella forsythia ATCC 43037" 2 2 2
+"GCF_000190535.1_ASM19053v1" "Odoribacter splanchnicus 1651/6, DSM 20712" 4 4 4
+"GCF_000212375.1_ASM21237v1" "Porphyromonas asaccharolytica VPI 4198, DSM 20707" 2 2 2
+"GCF_000007585.1_ASM758v1" "Porphyromonas gingivalis W83" 4 4 4
+"GCF_000183135.1_ASM18313v1" "Paludibacter propionicigenes WB4, DSM 17365" 3 3 3
+"GCF_000010645.1_ASM1064v1" "Candidatus Azobacteroides pseudotrichonymphae gv. CFP2" 2 1.33 2
+"GCF_000012825.1_ASM1282v1" "Bacteroides vulgatus ATCC 8482" 7 7 7
+"GCF_000190575.1_ASM19057v1" "Bacteroides salanitronis BL78, DSM 18170" 6 6 6
+"GCF_000025985.1_ASM2598v1" "Bacteroides fragilis NCTC 9343" 6 6.33 6
+"GCF_000011065.1_ASM1106v1" "Bacteroides thetaiotaomicron VPI-5482" 5 5 5
+"GCA_000210075.1_ASM21007v1" "Bacteroides xylanisolvens XB1A" NA 0.33 1
+"GCF_000186225.1_ASM18622v1" "Bacteroides helcogenes P 36-108, DSM 20613" 5 5 5
+"GCF_000025925.1_ASM2592v1" "Prevotella ruminicola 23" 4 4 4
+"GCF_000163055.2_ASM16305v2" "Prevotella sp. F0039" 4 1 4
+"GCF_000144405.1_ASM14440v1" "Prevotella melaninogenica ATCC 25845" 4 4.33 4
+"GCF_000261025.1_ASM26102v1" "Prevotella intermedia 17" 4 3 4
+"GCF_000220215.1_ASM22021v1" "Prevotella dentalis ES 2772" NA 5 5
+"GCF_000012845.1_ASM1284v1" "Parabacteroides distasonis ATCC 8503" 7 7 7
+"GCF_000512915.1_ASM51291v1" "Barnesiella viscericola C46, DSM 18177" 5 5 5
+"GCF_000265365.1_ASM26536v1" "Alistipes finegoldii AHN 2437, DSM 17242" 2 2 2
+"GCF_000194605.1_ASM19460v1" "Fluviicola taffensis RW262, DSM 16823" 2 2 2
+"GCF_000236405.1_ASM23640v1" "Blattabacterium sp. Cpu" 1 1 1
+"GCF_000233435.1_ASM23343v1" "Blattabacterium sp. (Mastotermes darwiniensis) MADAR" 1 1 1
+"GCF_000022605.2_ASM2260v1" "Blattabacterium sp. Bge" 1 1 1
+"GCF_000093165.1_ASM9316v1" "Blattabacterium sp. BPLAN" 1 1 1
+"GCF_000265465.1_ASM26546v1" "Ornithobacterium rhinotracheale DSM 15997" 3 3 3
+"GCF_000023725.1_ASM2372v1" "Flavobacteriaceae bacterium 3519-10" 2 2 2
+"GCF_000183155.1_ASM18315v1" "Riemerella anatipestifer A350/72, DSM 15868" 3 3 3
+"GCF_000191565.1_ASM19156v1" "Riemerella anatipestifer RA-GD" 3 3 3
+"GCF_000189415.1_ASM18941v1" "Weeksella virosa 9751, DSM 16922" 5 5 5
+"GCF_000016645.1_ASM1664v1" "Flavobacterium johnsoniae UW101, ATCC 17061" 6 6 6
+"GCF_000064305.2_ASM6430v2" "Flavobacterium psychrophilum JIP02/86" 6 6 6
+"GCF_000220625.1_ASM22062v1" "Capnocytophaga canimorsus Cc5" 3 3 3
+"GCF_000023285.1_ASM2328v1" "Capnocytophaga ochracea VPI 2845, DSM 7271" 4 4 4
+"GCF_000024125.1_ASM2412v1" "Robiginitalea biformata HTCC2501" 2 2 2
+"GCF_000153165.2_ASM15316v2" "Maribacter sp. HTCC2170" 2 2 2
+"GCF_000190595.1_ASM19059v1" "Cellulophaga lytica LIM-21, DSM 7489" 4 4 4
+"GCF_000186265.1_ASM18626v1" "Cellulophaga algicola IC166, DSM 14237" 5 5 5
+"GCF_000152945.2_ASM15294v2" "Polaribacter sp. MED152" 2 2 2
+"GCA_000211855.3_ASM21185v3" "Lacinutrix sp. 5H-3-7-4" 2 2 2
+"GCF_000023465.1_ASM2346v1" "Zunongwangia profunda SM-A87" 3 3 3
+"GCF_000060345.1_ASM6034v1" "Gramella forsetii KT0803" 3 3 3
+"GCF_000265385.1_ASM26538v1" "Aequorivita sublithincola QSSC9-3, DSM 14238" 2 2 2
+"GCF_000224085.1_ASM22408v1" "Muricauda ruestringensis B1, DSM 13258" 2 2 2
+"GCF_000240075.2_ASM24007v2" "Flavobacterium columnare ATCC 49512" 5 5 5
+"GCF_000024005.1_ASM2400v1" "Chitinophaga pinensis UQM 2034, DSM 2588" 6 6 6
+"GCF_000246855.1_ASM24685v1" "Niastella koreensis GR20-10, DSM 17620" 3 3 3
+"GCA_000243115.3_ASM24311v3" "Niabella soli JS13-8, DSM 19437" 2 2 2
+"GCF_000212735.1_ASM21273v1" "Haliscomenobacter hydrossis O, DSM 1100" 2 2 2
+"GCF_000250635.1_ASM25063v1" "Saprospira grandis Lewin" 3 3.33 3
+"GCF_000024845.1_ASM2484v1" "Rhodothermus marinus R-10, DSM 4252" 1 1 1
+"GCF_000224745.1_ASM22474v1" "Rhodothermus marinus SG0.5JP17-172" 1 1 1
+"GCF_000013045.1_ASM1304v1" "Salinibacter ruber M31, DSM 13855" 1 1 1
+"GCA_000146025.1_ASM14602v1" "uncultured Termite group 1 bacterium Rs-D17" NA 1 1
+"GCF_000020145.1_ASM2014v1" "Elusimicrobium minutum Pei191" 1 1 1
+"GCF_000020985.1_ASM2098v1" "Thermodesulfovibrio yellowstonii DSM 11347" 1 1 1
+"GCF_000025725.1_ASM2572v1" "Denitrovibrio acetiphilus N2460, DSM 12809" 2 2 2
+"GCF_000183405.1_ASM18340v1" "Calditerrivibrio nitroreducens Yu37-1, DSM 19672" 2 2 2
+"GCF_000218625.1_ASM21862v1" "Flexistipes sinusarabici MAS10, DSM 4947" 2 2 2
+"GCF_000177635.2_ASM17763v2" "Desulfurispirillum indicum S5, DSM 22839" 3 3 3
+"GCF_000517565.1_ASM51756v1" "Desulfurella acetivorans A63, DSM 5264" 2 2 2
+"GCF_000194135.1_ASM19413v1" "Hippea maritima MH2, DSM 10411" 2 2 2
+"GCF_000021725.1_ASM2172v1" "Nautilia profundicola Am-H" 4 4 4
+"GCF_000012965.1_ASM1296v1" "Sulfurimonas denitrificans DSM 1251" 4 4 4
+"GCF_000147355.1_ASM14735v1" "Sulfurimonas autotrophica OK10, DSM 16294" 4 4 4
+"GCF_000183725.1_ASM18372v1" "Sulfuricurvum kujiense YK-1, DSM 16994" 3 3 3
+"GCF_000186245.1_ASM18624v1" "Nitratifractor salsuginis E9I37-1, DSM 16511" 2 2 2
+"GCF_000010345.1_ASM1034v1" "Sulfurovum sp. NBC37-1" 3 3 3
+"GCF_000017465.1_ASM1746v1" "Campylobacter curvus 525.92" 3 5 3
+"GCF_000017725.1_ASM1772v1" "Campylobacter concisus 13826" 3 3 3
+"GCF_000017585.1_ASM1758v1" "Campylobacter hominis ATCC BAA-381" 3 3 3
+"GCF_000015085.1_ASM1508v1" "Campylobacter fetus fetus 82-40" 3 3 3
+"GCF_000019205.1_ASM1920v1" "Campylobacter lari RM2100" 3 3 3
+"GCF_000011865.1_ASM1186v1" "Campylobacter jejuni RM1221" 3 3 3
+"GCF_000017485.1_ASM1748v1" "Campylobacter jejuni doylei 269.97" 3 4 3
+"GCF_000024885.1_ASM2488v1" "Sulfurospirillum deleyianum 5175, DSM 6946" 3 3 3
+"GCF_000265295.1_ASM26529v1" "Sulfurospirillum barnesii SES-3" 2 2 2
+"GCF_000092245.1_ASM9224v1" "Arcobacter nitrofigilis DSM 7299" 4 4 4
+"GCF_000284355.1_ASM28435v1" "Arcobacter butzleri ED-1" 5 5 5
+"GCF_000284235.1_ASM28423v1" "Arcobacter sp. L" 5 5 5
+"GCF_000014025.1_ASM1402v1" "Arcobacter butzleri RM4018" 5 5 5
+"GCF_000196135.1_ASM19613v1" "Wolinella succinogenes DSM 1740" 3 3 3
+"GCF_000091985.1_ASM9198v1" "Helicobacter mustelae ATCC 43772" 2 2 2
+"GCF_000200595.1_ASM20059v1" "Helicobacter felis CS1, ATCC 49179" 2 2 2
+"GCF_000237285.1_ASM23728v1" "Helicobacter bizzozeronii CIII-1" NA 2 2
+"GCF_000011725.1_ASM1172v1" "Helicobacter pylori 51" 2 2 2
+"GCF_000270045.1_ASM27004v1" "Helicobacter pylori F32" 2 2 2
+"GCF_000008525.1_ASM852v1" "Helicobacter pylori 26695" 2 2.33 2
+"GCF_000196755.1_ASM19675v1" "Helicobacter pylori B8" 2 2 2
+"GCF_000021165.1_ASM2116v1" "Helicobacter pylori G27" 2 2.33 2
+"GCF_000009305.1_ASM930v1" "Helicobacter acinonychis Sheeba" 2 2 2
+"GCF_000185245.1_ASM18524v1" "Helicobacter pylori SouthAfrica7" 2 2 2
+"GCF_000148665.1_ASM14866v1" "Helicobacter pylori 908" 1 1 1
+"GCF_000178935.2_ASM17893v2" "Helicobacter pylori 35A" 2 2 2
+"GCF_000255955.1_ASM25595v1" "Helicobacter pylori ELS37" 2 2 2
+"GCF_000224575.1_ASM22457v1" "Helicobacter pylori SNT49" 2 2 2
+"GCF_000007905.1_ASM790v1" "Helicobacter hepaticus 3B1, ATCC 51449" 1 1 1
+"GCF_000010325.1_ASM1032v1" "Nitratiruptor sp. SB155-2" 3 3 3
+"GCF_000185805.1_ASM18580v1" "Thermovibrio ammonificans HB-1, DSM 15698" 3 3 3
+"GCF_000191045.1_ASM19104v1" "Desulfurobacterium thermolithotrophum BSA, DSM 11699" 2 2 2
+"GCF_000008625.1_ASM862v1" "Aquifex aeolicus VF5" 2 2 2
+"GCF_000020785.1_ASM2078v1" "Hydrogenobaculum sp. Y04AAS1" 2 2 2
+"GCF_000348765.2_ASM34876v2" "Hydrogenobaculum sp. SN" 2 2 2
+"GCF_000010785.1_ASM1078v1" "Hydrogenobacter thermophilus TK-6, DSM 6534" 1 1 1
+"GCF_000025605.1_ASM2560v1" "Thermocrinis albus HI 11/12, DSM 14484" 1 1 1
+"GCF_000021545.1_ASM2154v1" "Sulfurihydrogenibium azorense Az-Fu1" 2 2 2
+"GCF_000020325.1_ASM2032v1" "Sulfurihydrogenibium sp. YO3AOP1" 3 3 3
+"GCF_000021565.1_ASM2156v1" "Persephonella marina EX-H1" 2 2 2
+"GCF_000196815.1_ASM19681v1" "Candidatus Nitrospira defluvii" 1 1 1
+"GCF_000226295.1_ASM22629v1" "Candidatus Chloracidobacterium thermophilum B" 1 1 1
+"GCF_000014905.1_ASM1490v1" "Candidatus Solibacter usitatus Ellin6076" 2 2 2
+"GCF_000014005.1_ASM1400v1" "Candidatus Koribacter versatilis Ellin345" 1 1 1
+"GCF_000022565.1_ASM2256v1" "Acidobacterium capsulatum ATCC 51196" 1 1 1
+"GCF_000178975.2_ASM17897v2" "Granulicella tundricola MP5ACTX9" 1 1 1
+"GCF_000265425.1_ASM26542v1" "Terriglobus roseus KBS 63, DSM 18391" 2 2 2
+"GCF_000179915.2_ASM17991v2" "Terriglobus saanensis SP1PR4, DSM 23119" 1 1 1
+"GCF_000012885.1_ASM1288v1" "Pelobacter carbinolicus Bd1, GraBd1" 2 2 2
+"GCF_000020385.1_ASM2038v1" "Geobacter lovleyi SZ" 2 2 2
+"GCF_000015045.1_ASM1504v1" "Pelobacter propionicus DSM 2379" 4 4 4
+"GCF_000210155.1_ASM21015v1" "Geobacter sulfurreducens KN400" 2 2 2
+"GCF_000012925.1_ASM1292v1" "Geobacter metallireducens GS-15" 2 2 2
+"GCF_000022265.1_ASM2226v1" "Geobacter sp. FRC-32" 2 2 2
+"GCF_000016745.1_ASM1674v1" "Geobacter uraniireducens Rf4" 2 2 2
+"GCF_000023645.1_ASM2364v1" "Geobacter sp. M21" 4 4 4
+"GCF_000175115.2_ASM17511v2" "Geobacter sp. M18" 4 4 4
+"GCF_000024325.1_ASM2432v1" "Desulfohalobium retbaense HR100, DSM 5692" 2 2 2
+"GCF_000023225.1_ASM2322v1" "Desulfomicrobium baculatum X, DSM 4028" 2 2.33 2
+"GCF_000015485.1_ASM1548v1" "Desulfovibrio vulgaris vulgaris DP4" 5 5.33 5
+"GCF_000021385.1_ASM2138v1" "Desulfovibrio vulgaris Miyazaki F" 4 4 4
+"GCF_000022125.1_ASM2212v1" "Desulfovibrio desulfuricans desulfuricans ATCC 27774" 3 3 3
+"GCF_000010665.1_ASM1066v1" "Desulfovibrio magneticus RS-1" 3 3 3
+"GCF_000176915.2_ASM17691v2" "Desulfovibrio aespoeensis Aspo-2, DSM 10631" 2 2 2
+"GCF_000023445.1_ASM2344v1" "Desulfovibrio salexigens DSM 2638" 5 5 5
+"GCF_000092205.1_ASM9220v1" "Desulfurivibrio alkaliphilus AHT2" 2 2 2
+"GCF_000025945.1_ASM2594v1" "Desulfotalea psychrophila LSv54" 7 7.33 7
+"GCF_000186885.1_ASM18688v1" "Desulfobulbus propionicus 1pr3, DSM 2032" 2 2 2
+"GCF_000018405.1_ASM1840v1" "Desulfococcus oleovorans Hxd3" 1 1 1
+"GCF_000020365.1_ASM2036v1" "Desulfobacterium autotrophicum HRM2, DSM 3382" 6 6.33 6
+"GCF_000014965.1_ASM1496v1" "Syntrophobacter fumaroxidans MPOB" 2 2 2
+"GCF_000143965.1_ASM14396v1" "Desulfarculus baarsii 2st14, DSM 2075" 1 1 1
+"GCF_000013405.1_ASM1340v1" "Syntrophus aciditrophicus SB" 1 1 1
+"GCF_000266945.1_ASM26694v1" "Desulfomonile tiedjei DCB-1, DSM 6799" 1 1 1
+"GCF_000195295.1_ASM19529v1" "Desulfobacca acetoxidans ASRB2, DSM 11109" 1 1.33 1
+"GCF_000217795.1_ASM21779v1" "Thermodesulfatator indicus CIR29812, DSM 15286" 2 2 2
+"GCF_000196175.1_ASM19617v1" "Bdellovibrio bacteriovorus HD100" 2 2 2
+"GCF_000067165.1_ASM6716v1" "Sorangium cellulosum So ce 56" 4 4 4
+"GCF_000024805.1_ASM2480v1" "Haliangium ochraceum SMP-2, DSM 14365" 2 2 2
+"GCF_000255295.1_ASM25529v1" "Corallococcus coralloides DSM 2259" 3 3 3
+"GCF_000012685.1_ASM1268v1" "Myxococcus xanthus DK 1622" 4 4 4
+"GCF_000219105.1_ASM21910v1" "Myxococcus fulvus HW-1" 3 3 3
+"GCF_000165485.1_ASM16548v1" "Stigmatella aurantiaca DW4/3-1" 2 2 2
+"GCF_000017505.1_ASM1750v1" "Anaeromyxobacter sp. Fw109-5" 2 2 2
+"GCF_000013385.1_ASM1338v1" "Anaeromyxobacter dehalogenans 2CP-C" 2 2 2
+"GCF_000221025.1_ASM22102v1" "Acidithiobacillus caldus SM-1" 2 2 2
+"GCF_000020825.1_ASM2082v1" "Acidithiobacillus ferrooxidans ATCC 53993" 2 2 2
+"GCA_000214095.3_ASM21409v3" "Acidithiobacillus ferrivorans SS3" 2 2 2
+"GCF_000024765.1_ASM2476v1" "Halothiobacillus neapolitanus c2, ATCC 23641" 2 2 2
+"GCF_000012605.1_ASM1260v1" "Thiomicrospira crunogena XCL-2" 3 3 3
+"GCF_000214825.1_ASM21482v1" "Thioalkalimicrobium cyclicum ALM1, DSM 14477" 2 2 2
+"GCA_000227665.3_ASM22766v3" "Thioalkalimicrobium aerophilum AL3" 2 2 2
+"GCF_000024085.1_ASM2408v1" "Kangiella koreensis SW-125, DSM 16069" 2 2 2
+"GCF_000148645.1_ASM14864v1" "Ferrimonas balearica PAT, DSM 9799" 7 7.33 7
+"GCF_000014885.1_ASM1488v1" "Shewanella piezotolerans WP3" 8 8.33 8
+"GCF_000019185.1_ASM1918v1" "Shewanella halifaxensis HAW-EB4" 10 10.33 10
+"GCF_000018285.1_ASM1828v1" "Shewanella pealeana ANG-SQ1, ATCC 700345" 11 11.33 11
+"GCF_000019525.1_ASM1952v1" "Shewanella woodyi MS32, ATCC 51908" 10 10.67 10
+"GCF_000018025.1_ASM1802v1" "Shewanella sediminis HAW-EB3" 12 12.33 12
+"GCF_000091325.1_ASM9132v1" "Shewanella violacea DSS12" 14 14.33 14
+"GCF_000146165.2_ASM14616v2" "Shewanella oneidensis MR-1" 9 9.33 9
+"GCF_000203935.1_ASM20393v1" "Shewanella sp. ANA-3" 9 9.33 9
+"GCF_000018765.1_ASM1876v1" "Shewanella baltica OS195" 10 10.33 10
+"GCF_000015185.1_ASM1518v1" "Shewanella sp. W3-18-1" 8 8.33 8
+"GCF_000169215.2_ASM16921v2" "Shewanella putrefaciens 200 (Missing data)" 8 8.33 8
+"GCF_000015285.1_ASM1528v1" "Psychromonas ingrahamii 37" 10 10.33 10
+"GCF_000196255.1_ASM19625v1" "Photobacterium profundum SS9" 15 16 15
+"GCF_000196495.1_ASM19649v1" "Aliivibrio salmonicida LFI1238" 12 12.33 12
+"GCF_000020845.1_ASM2084v1" "Vibrio fischeri MJ11" NA 4 4
+"GCF_000091465.1_ASM9146v1" "Vibrio splendidus LGP32" 8 8.67 8
+"GCF_000017705.1_ASM1770v1" "Vibrio harveyi BB120, ATCC BAA-1116" 11 8 11
+"GCF_000024825.1_ASM2482v1" "Vibrio sp. Ex25" 11 11.33 11
+"GCF_000196095.1_ASM19609v1" "Vibrio parahaemolyticus sv. O3:K6 RIMD 2210633" 11 11.33 11
+"GCF_000009745.1_ASM974v1" "Vibrio vulnificus YJ016" 9 9.33 9
+"GCF_000241385.1_ASM24138v1" "Vibrio sp. EJY3" 9 9.33 9
+"GCF_000217675.1_ASM21767v1" "Vibrio anguillarum sv. O1 775" 7 7 7
+"GCF_000184325.1_ASM18432v1" "Vibrio furnissii 2510/74, NCTC 11218" 7 7.33 7
+"GCF_000195065.1_ASM19506v1" "Vibrio cholerae LMA3894-4" 8 8.33 8
+"GCF_000022585.1_ASM2258v1" "Vibrio cholerae MJ-1236" 7 7.33 7
+"GCA_000166455.2_ASM16645v2" "Vibrio cholerae sv. O1 2010EL-1786" 7 7.33 7
+"GCF_000209675.1_ASM20967v1" "Gallibacterium anatis UMN179" 6 6.33 6
+"GCF_000234745.1_ASM23474v1" "Pasteurella multocida 36950" 6 6.33 6
+"GCF_000006825.1_ASM682v1" "Pasteurella multocida multocida sv. 3 Pm70" 6 6.67 6
+"GCA_000016485.1_ASM1648v1" "Haemophilus influenzae NTHi PittGG" NA 6 6
+"GCF_000165525.1_ASM16552v1" "Haemophilus influenzae R2866" 6 6 6
+"GCF_000210895.1_ASM21089v1" "Haemophilus parainfluenzae T3T1" 6 6.33 6
+"GCA_000241025.2_ASM24102v2" "Aggregatibacter actinomycetemcomitans ANH9381" 6 6 6
+"GCF_000022985.1_ASM2298v1" "Aggregatibacter aphrophilus NJ8700" 6 6.33 6
+"GCF_000007745.1_ASM774v1" "Mannheimia succiniciproducens MBEL55E" 6 6.33 6
+"GCF_000017245.1_ASM1724v1" "Actinobacillus succinogenes 130Z" 6 6.33 6
+"GCF_000021885.1_ASM2188v1" "Haemophilus parasuis sv. 5 SH0165" 6 6.67 6
+"GCF_000007945.1_ASM794v1" "Haemophilus ducreyi 35000HP" 6 6.33 6
+"GCF_000015885.1_ASM1588v1" "Actinobacillus pleuropneumoniae sv. 5b L20" 6 6.33 6
+"GCF_000011785.1_ASM1178v1" "Histophilus somni 129P" 5 5.33 5
+"GCF_000027225.1_ASM2722v1" "Xenorhabdus bovienii SS-2004" 7 9.67 7
+"GCF_000252955.1_ASM25295v1" "Xenorhabdus nematophila ATCC 19061" NA 9.67 9.67
+"GCF_000196155.1_ASM19615v1" "Photorhabdus luminescens laumondii TTO1" 7 7.33 7
+"GCF_000069965.1_ASM6996v1" "Proteus mirabilis HI4320" 7 7.33 7
+"GCF_000009345.1_ASM934v1" "Yersinia enterocolitica enterocolitica sv. 0:08 8081" 7 7.33 7
+"GCF_000222975.1_ASM22297v1" "Yersinia pestis A1122" 6 6 6
+"GCF_000007885.1_ASM788v1" "Yersinia pestis bv. Microtus 91001" 7 7.33 7
+"GCF_000241955.1_ASM24195v1" "Rahnella aquatilis CIP 78.65" NA 7.33 7.33
+"GCF_000187705.1_ASM18770v1" "Rahnella sp. Y9602" 7 7.33 7
+"GCA_000648575.1_ASM64857v1" "Serratia plymuthica AS9" NA 7.33 7.33
+"GCF_000018085.1_ASM1808v1" "Serratia proteamaculans 568" 7 7 7
+"GCF_000146305.1_ASM14630v1" "Edwardsiella tarda FL6-60" 8 8.33 8
+"GCF_000022885.2_ASM2288v2" "Edwardsiella ictaluri 93-146" 8 8.33 8
+"GCA_000023545.1_ASM2354v1" "Dickeya dadantii Ech703" NA 7.33 7.33
+"GCA_000023565.1_ASM2356v1" "Dickeya zeae Ech1591" NA 7.33 7.33
+"GCF_000025065.1_ASM2506v1" "Dickeya dadantii Ech586" 7 7.33 7
+"GCF_000147055.1_ASM14705v1" "Dickeya dadantii 3937" 7 7.33 7
+"GCF_000024645.1_ASM2464v1" "Pectobacterium wasabiae WPP163" 7 7.33 7
+"GCF_000011605.1_ASM1160v1" "Pectobacterium atrosepticum SCRI1043" 7 7.33 7
+"GCF_000023605.1_ASM2360v1" "Pectobacterium carotovorum carotovorum PC1" 7 7.33 7
+"GCF_000175935.2_ASM17593v2" "Pantoea sp. At-9b" 7 7.33 7
+"GCF_000233595.1_ASM23359v1" "Pantoea ananatis PA13" 7 7.33 7
+"GCF_000270125.2_ASM27012v2" "Pantoea ananatis AJ13355" 7 7.33 7
+"GCF_000148935.1_ASM14893v1" "Pantoea vagans C9-1" 7 7.33 7
+"GCF_000196615.1_ASM19661v1" "Erwinia billingiae Eb661" 7 7 7
+"GCF_000026985.1_ASM2698v1" "Erwinia pyrifoliae DSM 12163" NA 7.33 7.33
+"GCF_000017665.1_ASM1766v1" "Cronobacter sakazakii ATCC BAA-894" 7 5.33 7
+"GCF_000016325.1_ASM1632v1" "Enterobacter sp. 638" 7 7.33 7
+"GCF_000025565.1_ASM2556v1" "Enterobacter cloacae cloacae ATCC 13047" 8 8.33 8
+"GCA_000210775.1_ASM21077v1" "Enterobacter cloacae cloacae NCTC 9394" NA 1.67 1.67
+"GCF_000164865.1_ASM16486v1" "Enterobacter cloacae SCF1" 7 7.33 7
+"GCF_000215745.1_ASM21574v1" "Enterobacter aerogenes KCTC 2190" 8 8.33 8
+"GCF_000220485.1_ASM22048v1" "Klebsiella pneumoniae KCTC 2242" 8 8.33 8
+"GCF_000019565.1_ASM1956v1" "Klebsiella pneumoniae 342" 8 8.33 8
+"GCF_000027085.1_ASM2708v1" "Citrobacter rodentium ICC168" 7 7.33 7
+"GCF_000026225.1_ASM2622v1" "Escherichia fergusonii UMN026, ATCC 35469" 7 7.33 7
+"GCF_000010765.1_ASM1076v1" "Escherichia coli O111:H 11128" 7 7.33 7
+"GCF_000019425.1_ASM1942v1" "Escherichia coli DH10B" 7 7.33 7
+"GCF_000012025.1_ASM1202v1" "Shigella boydii sv. 4 Sb227" 7 7.33 7
+"GCF_000025165.1_ASM2516v1" "Escherichia coli O55:H7 CB9615" 7 7.33 7
+"GCF_000014845.1_ASM1484v1" "Escherichia coli sv. O1:K1:H7 APEC" 7 7.33 7
+"GCF_000252875.1_ASM25287v1" "Salmonella enterica enterica sv. Typhimurium 798" 7 7.33 7
+"GCF_000235545.1_ASM23554v1" "Salmonella enterica enterica sv. Gallinarum RKS5078" 7 7.33 7
+"GCF_000245535.1_ASM24553v1" "Salmonella enterica enterica sv. Typhi P-stx-12" 7 7.33 7
+"GCF_000239975.1_ASM23997v1" "Enterobacter cloacae EcWSU1" 8 8.33 8
+"GCF_000240325.1_ASM24032v1" "Klebsiella oxytoca KCTC 1686" 8 8.33 8
+"GCA_000240185.2_ASM24018v2" "Klebsiella pneumoniae pneumoniae HS11286" 8 8.33 8
+"GCF_000233895.1_ASM23389v1" "Escherichia coli clone D i14" 7 7.33 7
+"GCA_000308975.2_ASM30897v2" "Escherichia coli O150:H5 SE15" NA 7.33 7.33
+"GCF_000252995.1_ASM25299v1" "Salmonella bongori NCTC 12419" 7 7.33 7
+"GCF_000020705.1_ASM2070v1" "Salmonella enterica sv. Heidelberg SL476" 7 6.33 7
+"GCF_000018385.1_ASM1838v1" "Salmonella enterica sv. Paratyphi C RKS4594" 7 7.33 7
+"GCF_000020925.1_ASM2092v1" "Salmonella enterica sv. Dublin CT_02021853" 7 7 7
+"GCF_000018045.1_ASM1804v1" "Citrobacter koseri ATCC BAA-895" 7 5.33 7
+"GCF_000243075.1_ASM24307v1" "Oceanimonas sp. GK1" 7 7.33 7
+"GCF_000023065.1_ASM2306v1" "Tolumonas auensis TA 4, DSM 9187" 8 8.33 8
+"GCF_000196395.1_ASM19639v1" "Aeromonas salmonicida salmonicida A449" 9 9.33 9
+"GCF_000204115.1_ASM20411v1" "Aeromonas veronii B565" 10 10.33 10
+"GCF_000014805.1_ASM1480v1" "Aeromonas hydrophila hydrophila ATCC 7966" 10 10.33 10
+"GCF_000008465.1_ASM846v1" "Idiomarina loihiensis L2TR" 4 4 4
+"GCF_000014225.1_ASM1422v1" "Pseudoalteromonas atlantica T6c" 5 5 5
+"GCF_000226565.1_ASM22656v1" "Glaciecola nitratireducens FR1064" 4 4 4
+"GCF_000213655.1_ASM21365v1" "Alteromonas sp. SN2" 5 5 5
+"GCF_000020585.3_ASM2058v3" "Alteromonas macleodii Deep ecotype, DSM 17117" 5 5.33 5
+"GCF_000012325.1_ASM1232v1" "Colwellia psychrerythraea 34H" 9 9.33 9
+"GCF_000026085.1_ASM2608v1" "Pseudoalteromonas haloplanktis TAC125" 9 9.33 9
+"GCF_000184065.1_ASM18406v1" "Pseudoalteromonas sp. SM9913" 8 8.33 8
+"GCF_000046845.1_ASM4684v1" "Acinetobacter baylyi ADP1" 7 7 7
+"GCF_000226275.1_ASM22627v1" "Acinetobacter baumannii MDR-ZJ06" 6 6 6
+"GCF_000191145.1_ASM19114v1" "Acinetobacter calcoaceticus PHEA-2" 2 2 2
+"GCF_000196795.1_ASM19679v1" "Acinetobacter oleivorans DR1" 6 6 6
+"GCA_000015425.1_ASM1542v1" "Acinetobacter baumannii ATCC 17978" NA 5 5
+"GCA_000069205.1_ASM6920v1" "Acinetobacter baumannii SDF" NA 5 5
+"GCF_000069245.1_ASM6924v1" "Acinetobacter baumannii AYE" 6 6 6
+"GCF_000302495.1_RH4.0" "Moraxella catarrhalis RH4" NA 4 4
+"GCF_000012305.1_ASM1230v1" "Psychrobacter arcticus 273-4" 4 4 4
+"GCF_000013905.1_ASM1390v1" "Psychrobacter cryohalolentis K5" 4 4 4
+"GCF_000016885.1_ASM1688v1" "Psychrobacter sp. PRwf-1" 5 5 5
+"GCF_000198515.1_ASM19851v1" "gamma proteobacterium sp. HdN1" 3 3 3
+"GCF_000009365.1_ASM936v1" "Alcanivorax borkumensis SK2" 3 3 3
+"GCF_000017285.1_ASM1728v1" "Marinomonas sp. MWYL1" 8 8.33 8
+"GCF_000192865.1_ASM19286v1" "Marinomonas mediterranea MMB-1, ATCC 700492" 7 7 7
+"GCF_000214215.1_ASM21421v1" "Marinomonas posidonica IVIA-Po-181" 8 8 8
+"GCF_000012985.1_ASM1298v1" "Hahella chejuensis KCTC 2396" 5 5 5
+"GCF_000015365.1_ASM1536v1" "Marinobacter aquaeolei VT8" 3 3 3
+"GCF_000166295.1_ASM16629v1" "Marinobacter adhaerens HP15" 3 3 3
+"GCF_000196875.1_ASM19687v1" "Halomonas elongata DSM 2581" 4 4 4
+"GCF_000055785.1_ASM5578v1" "Chromohalobacter salexigens 1H11, DSM 3043" 5 5 5
+"GCF_000327065.1_ASM32706v1" "Pseudomonas stutzeri RCH2" 4 4 4
+"GCF_000195105.1_ASM19510v1" "Pseudomonas stutzeri CMT.A.9, DSM 4166" 4 4 4
+"GCF_000016565.1_ASM1656v1" "Pseudomonas mendocina ymp" 4 4 4
+"GCF_000204295.1_ASM20429v1" "Pseudomonas mendocina NK-01" 4 4 4
+"GCF_000026105.1_ASM2610v1" "Pseudomonas entomophila L48" 7 7.33 7
+"GCF_000019445.1_ASM1944v1" "Pseudomonas putida W619" 7 7.33 7
+"GCF_000219705.1_ASM21970v1" "Pseudomonas putida S16" 6 6.33 6
+"GCF_000012245.1_ASM1224v1" "Pseudomonas syringae pv. syringae B728a" 5 5.33 5
+"GCF_000012205.1_ASM1220v1" "Pseudomonas syringae pv. phaseolicola 1448A" 5 5.33 5
+"GCF_000213805.1_ASM21380v1" "Pseudomonas fulva 12-X" 4 4 4
+"GCF_000237065.1_ASM23706v1" "Pseudomonas fluorescens F113" 5 5.33 5
+"GCF_000292795.1_PF-R124.01" "Pseudomonas fluorescens R124" NA 0 1
+"GCF_000012265.1_ASM1226v1" "Pseudomonas protegens Pf-5" 5 5.33 5
+"GCA_000009225.1_ASM922v1" "Pseudomonas fluorescens SBW25" 5 5.33 5
+"GCF_000012445.1_ASM1244v1" "Pseudomonas fluorescens Pf0-1" 6 6.33 6
+"GCF_000194805.1_ASM19480v1" "Pseudomonas brassicacearum brassicacearum NFM421" 5 5.33 5
+"GCF_000226155.1_ASM22615v1" "Pseudomonas aeruginosa M18" 4 4.33 4
+"GCF_000026645.1_ASM2664v1" "Pseudomonas aeruginosa LESB58" 4 4.33 4
+"GCF_000021045.1_ASM2104v1" "Azotobacter vinelandii DJ, ATCC BAA-1303" 6 6 6
+"GCF_000023025.1_ASM2302v1" "Teredinibacter turnerae T7901" 3 3 3
+"GCF_000013665.1_ASM1366v1" "Saccharophagus degradans 2-40" 2 2 2
+"GCF_000019225.1_ASM1922v1" "Cellvibrio japonicus Ueda107" 3 3 3
+"GCF_000091785.1_ASM9178v1" "Legionella longbeachae NSW150" 4 4 4
+"GCF_000048645.1_ASM4864v1" "Legionella pneumophila Paris" 3 3 3
+"GCF_000239175.1_ASM23917v1" "Legionella pneumophila pneumonophila 570-CO-H, ATCC 43290" 3 3 3
+"GCF_000007765.1_ASM776v1" "Coxiella burnetii Nine Mile phase I / RSA 493" 1 1 1
+"GCF_000219045.1_ASM21904v1" "Francisella sp. TX077308" 3 3.33 3
+"GCF_000019285.1_ASM1928v1" "Francisella philomiragia philomiragia ATCC 25017" 3 3.33 3
+"GCF_000195555.1_ASM19555v1" "Francisella novicida 3523" 3 3.33 3
+"GCF_000248435.1_ASM24843v1" "Francisella tularensis sv. Type A1 TI0902" 3 3.33 3
+"GCF_000017785.1_ASM1778v1" "Francisella tularensis holarctica FTA (FTNF002-00)" 3 3.33 3
+"GCF_000024725.1_ASM2472v1" "Nitrosococcus halophilus Nc4" 2 2 2
+"GCF_000012805.1_ASM1280v1" "Nitrosococcus oceani C-107, ATCC 19707" 2 2 2
+"GCF_000143085.1_ASM14308v1" "Nitrosococcus watsoni C-113" 2 2 2
+"GCF_000015585.1_ASM1558v1" "Halorhodospira halophila SL1" 2 2 2
+"GCF_000014785.1_ASM1478v1" "Alkalilimnicola ehrlichii MLHE-1" 2 2 2
+"GCF_000008325.1_ASM832v1" "Methylococcus capsulatus Bath" 2 2 2
+"GCA_000242255.3_ASM24225v3" "Frateuria aurantia Kondo 67, DSM 6220" 4 4 4
+"GCA_000230695.3_ASM23069v3" "Rhodanobacter sp. 2APBS1" 2 2 2
+"GCA_000233915.4_ASM23391v4" "Pseudoxanthomonas spadix BD-a59" 1 1 1
+"GCF_000225915.1_ASM22591v1" "Xanthomonas axonopodis pv. citrumelo F1" 2 2 2
+"GCF_000221965.1_ASM22196v1" "Xanthomonas campestris pv. raphani 756C" 2 2 2
+"GCF_000007145.1_ASM714v1" "Xanthomonas campestris pv. Campestris" 2 2 2
+"GCF_000009165.1_ASM916v1" "Xanthomonas campestris pv. vesicatoria 85-10" 2 2 2
+"GCF_000010025.1_ASM1002v1" "Xanthomonas oryzae pv. oryzae MAFF 311018" 2 2 2
+"GCF_000185965.1_ASM18596v1" "Pseudoxanthomonas suwonensis 11-1" 2 2 2
+"GCF_000072485.1_ASM7248v1" "Stenotrophomonas maltophilia K279a" 4 4 4
+"GCF_000019765.1_ASM1976v1" "Xylella fastidiosa M23" 2 2 2
+"GCF_000327045.1_ASM32704v1" "Thioflavicoccus mobilis 8321" 2 2 2
+"GCA_000224005.3_ASM22400v3" "Marichromatium purpuratum 984" 3 3 3
+"GCA_000227745.3_ASM22774v3" "Thiocystis violascens 611, DSM 198" 3 3 3
+"GCF_000025485.1_ASM2548v1" "Allochromatium vinosum DSM 180" 3 3 3
+"GCF_000021985.1_ASM2198v1" "Thioalkalivibrio sulfidophilus HL-EbGR7" 1 1 1
+"GCF_000025545.1_ASM2554v1" "Thioalkalivibrio sp. K90mix" 1 1 1
+"GCA_000227685.3_ASM22768v3" "Thioalkalivibrio paradoxus ARh 1" 1 1 1
+"GCF_000015345.1_ASM1534v1" "Dichelobacter nodosus VCS1703A" 3 3 3
+"GCF_000007705.1_ASM770v1" "Chromobacterium violaceum ATCC 12472" 8 8.33 8
+"GCF_000283535.1_ASM28353v1" "Pseudogulbenkiania sp. NH8B" 8 8 8
+"GCF_000021025.1_ASM2102v1" "Laribacter hongkongensis HLHK9" 7 7 7
+"GCF_000196295.1_ASM19629v1" "Neisseria lactamica 020-06" 4 4 4
+"GCF_000020105.1_ASM2010v1" "Neisseria gonorrhoeae NCCP11945" 4 4 4
+"GCF_000026965.1_ASM2696v1" "Neisseria meningitidis 8013" 4 4 4
+"GCF_000024165.1_ASM2416v1" "Candidatus Accumulibacter phosphatis Type IIA UW-1" 2 2 2
+"GCF_000236665.1_ASM23666v1" "Azospira suillum PS" 2 2 2
+"GCF_000012425.1_ASM1242v1" "Dechloromonas aromatica RCB" 4 4 4
+"GCF_000025965.1_ASM2596v1" "Aromatoleum aromaticum EbN1" 4 4 4
+"GCF_000021765.1_ASM2176v1" "Thauera aminoaromatica MZ1T" 4 4 4
+"GCF_000061505.1_ASM6150v1" "Azoarcus sp. BH72" 4 4 4
+"GCF_000253115.1_ASM25311v1" "Thiomonas arsenitoxydans 3As" NA 1 1
+"GCF_000015725.1_ASM1572v1" "Methylibium petroleiphilum PM1" 1 1 1
+"GCF_000019785.1_ASM1978v1" "Leptothrix cholodnii SP-6" 2 2.33 2
+"GCF_000013605.1_ASM1360v1" "Rhodoferax ferrireducens T118" 2 2 2
+"GCF_000013865.1_ASM1386v1" "Polaromonas sp. JS666" 1 1 1
+"GCF_000015505.1_ASM1550v1" "Polaromonas naphthalenivorans CJ2" 2 2 2
+"GCF_000015565.1_ASM1556v1" "Verminephrobacter eiseniae EF01-2" 3 3 3
+"GCF_000176855.2_ASM17685v2" "Acidovorax avenae avenae ATCC 19860" 3 3 3
+"GCF_000015325.1_ASM1532v1" "Acidovorax avenae citrulli AAC00-1" 3 3 3
+"GCF_000022305.1_ASM2230v1" "Acidovorax ebreus TPSY" 3 3 3
+"GCF_000179015.2_ASM17901v2" "Alicycliphilus denitrificans BC" 3 3 3
+"GCF_000018665.1_ASM1866v1" "Delftia acidovorans SPH-1" 5 5 5
+"GCF_000023345.1_ASM2334v1" "Variovorax paradoxus S110" 2 2 2
+"GCF_000184745.1_ASM18474v1" "Variovorax paradoxus EPS" 2 2 2
+"GCF_000215705.1_ASM21570v1" "Ramlibacter tataouinensis TTB310" 1 1 1
+"GCF_000013625.1_ASM1362v1" "Janthinobacterium sp. Marseille" 2 2 2
+"GCF_000026125.1_ASM2612v1" "Herminiimonas arsenicoxydans ULPAs1" 2 2 2
+"GCF_000143225.1_ASM14322v1" "Herbaspirillum seropedicae SmR1" 3 3 3
+"GCF_000221045.1_ASM22104v1" "Collimonas fungivorans Ter331" 3 3 3
+"GCF_000016345.1_ASM1634v1" "Polynucleobacter necessarius asymbioticus QLW-P1DMWA-1" 1 1 1
+"GCF_000019745.1_ASM1974v1" "Polynucleobacter necessarius necessarius STIR1 (Endosymbiont)" 1 1.33 1
+"GCF_000196015.1_ASM19601v1" "Cupriavidus metallidurans CH34" 4 4 4
+"GCA_000009285.2_ASM928v2" "Ralstonia eutropha H16" 5 5 5
+"GCF_000203875.1_ASM20387v1" "Ralstonia eutropha JMP134" 6 6 6
+"GCF_000020205.1_ASM2020v1" "Ralstonia pickettii 12J" 3 3 3
+"GCF_000009125.1_ASM912v1" "Ralstonia solanacearum GMI1000" 4 4 4
+"GCF_000215325.1_ASM21532v1" "Ralstonia solanacearum Po82" 3 3 3
+"GCF_000198775.1_ASM19877v1" "Burkholderia rhizoxinica HKI 454" 3 3 3
+"GCF_000020045.1_ASM2004v1" "Burkholderia phymatum STM815" 6 5.33 6
+"GCF_000092885.1_ASM9288v1" "Burkholderia sp. CCGE1002" 7 7 7
+"GCF_000176935.3_ASM17693v3" "Burkholderia sp. CCGE1001" 6 6 6
+"GCF_000148685.1_ASM14868v1" "Burkholderia sp. CCGE1003" 6 6 6
+"GCF_000013645.1_ASM1364v1" "Burkholderia xenovorans LB400" 6 6 6
+"GCF_000236065.1_ASM23606v1" "Burkholderia sp. YI23" 6 6 6
+"GCF_000020125.1_ASM2012v1" "Burkholderia phytofirmans PsJN" 6 6 6
+"GCF_000022645.2_ASM2264v1" "Burkholderia glumae BGR1" 5 5 5
+"GCF_000194745.1_ASM19474v1" "Burkholderia gladioli BSR3" 5 5 5
+"GCF_000010545.1_ASM1054v1" "Burkholderia multivorans ATCC 17616" 5 5 5
+"GCF_000016205.1_ASM1620v1" "Burkholderia vietnamiensis G4" NA 6 6
+"GCF_000203955.1_ASM20395v1" "Burkholderia cenocepacia HI2424" 6 6 6
+"GCF_000009485.1_ASM948v1" "Burkholderia cenocepacia gv. III J2315" 6 6 6
+"GCF_000012945.1_ASM1294v1" "Burkholderia cepacia 383" 6 6 6
+"GCF_000019925.1_ASM1992v1" "Burkholderia ambifaria MC40-6" 6 6 6
+"GCF_000012365.1_ASM1236v1" "Burkholderia thailandensis E264, ATCC 700388" 4 4 4
+"GCF_000015465.1_ASM1546v1" "Burkholderia mallei SAVP1" 5 3.67 5
+"GCF_000011545.1_ASM1154v1" "Burkholderia pseudomallei K96243" 4 4 4
+"GCF_000209655.1_ASM20965v1" "Pusillimonas sp. T7-7" 2 2 2
+"GCF_000070465.1_ASM7046v1" "Bordetella avium 197N" 3 3 3
+"GCF_000165835.1_ASM16583v1" "Achromobacter xylosoxidans A8" 3 3.33 3
+"GCF_000195675.1_ASM19567v1" "Bordetella bronchiseptica RB50" 3 3 3
+"GCF_000226625.1_ASM22662v1" "Taylorella asinigenitalis MCE3" 3 3 3
+"GCF_000185745.1_ASM18574v1" "Taylorella equigenitalis MCE9" 3 3 3
+"GCF_000012745.1_ASM1274v1" "Thiobacillus denitrificans ATCC 25259" 2 2 2
+"GCF_000093025.1_ASM9302v1" "Methylotenera versatilis 301, JCM 17579" 3 3 3
+"GCF_000023705.1_ASM2370v1" "Methylotenera mobilis JLW8" 2 2 2
+"GCF_000023745.1_ASM2374v1" "Methylovorus glucosetrophus SIP3-4" 2 2 2
+"GCF_000013705.1_ASM1370v1" "Methylobacillus flagellatus KT" 2 2 2
+"GCF_000025705.1_ASM2570v1" "Sideroxydans lithotrophicus ES-1" 2 2 2
+"GCF_000145255.1_ASM14525v1" "Gallionella capsiferriformans ES-2" 3 3 3
+"GCF_000196355.1_ASM19635v1" "Nitrosospira multiformis ATCC 25196" 1 1 1
+"GCF_000175095.2_ASM17509v2" "Nitrosomonas sp. AL212" 1 1 1
+"GCF_000219585.1_ASM21958v1" "Nitrosomonas sp. IS79A3" 1 1 1
+"GCF_000009145.1_ASM914v1" "Nitrosomonas europaea ATCC 19718" 1 1 1
+"GCF_000014765.1_ASM1476v1" "Nitrosomonas eutropha C91" 1 1 1
+"GCF_000014865.1_ASM1486v1" "Magnetococcus sp. MC-1" 3 3 3
+"GCF_000283515.1_ASM28351v1" "Sphingobium sp. SYK-6" 2 2 2
+"GCF_000091125.1_ASM9112v1" "Sphingobium japonicum UT26S" 3 3 3
+"GCF_000013005.1_ASM1300v1" "Erythrobacter litoralis HTCC2594" 1 1 1
+"GCF_000253255.1_ASM25325v1" "Novosphingobium sp. PP1Y" 3 3 3
+"GCF_000013325.1_ASM1332v1" "Novosphingobium aromaticivorans DSM 12444" 3 3 3
+"GCF_000013985.1_ASM1398v1" "Sphingopyxis alaskensis RB2256" 1 1 1
+"GCF_000218875.1_ASM21887v1" "Zymomonas mobilis pomaceae Barker 1, ATCC 29192" 3 3 3
+"GCF_000007105.1_ASM710v1" "Zymomonas mobilis mobilis ZM4" 3 3 3
+"GCF_000016765.1_ASM1676v1" "Sphingomonas wittichii RW1" 2 2 2
+"GCF_000024465.1_ASM2446v1" "Candidatus Puniceispirillum marinum IMCC1322" 1 1 1
+"GCF_000226315.1_ASM22631v1" "Micavibrio aeruginosavorus ARL-13" 1 1 1
+"GCF_000016185.1_ASM1618v1" "Rhodocista centenaria SW" 4 3.67 4
+"GCF_000010725.1_ASM1072v1" "Azospirillum sp. B510" 9 8.67 9
+"GCA_000632475.2_ASM63247v2" "Azospirillum brasilense Sp245" 9 4.67 9
+"GCF_000283655.1_ASM28365v1" "Azospirillum lipoferum 4B" 9 8.33 9
+"GCF_000009985.1_ASM998v1" "Magnetospirillum magneticum AMB-1" 2 2 2
+"GCF_000225955.1_ASM22595v1" "Rhodospirillum rubrum F11" 4 4 4
+"GCF_000013085.1_ASM1308v1" "Rhodospirillum rubrum S1, ATCC 11170" 4 4 4
+"GCF_000011685.1_ASM1168v1" "Gluconobacter oxydans 621H" 4 4 4
+"GCF_000021325.1_ASM2132v1" "Gluconacetobacter diazotrophicus PA1 5" 4 4 4
+"GCF_000010965.1_ASM1096v1" "Acetobacter pasteurianus IFO 3283-12" 5 5 5
+"GCF_000202835.1_ASM20283v1" "Acidiphilium multivorum AIU301" 2 2 2
+"GCF_000014285.1_ASM1428v1" "Granulibacter bethesdensis CGDNIH1" 3 3 3
+"GCF_000152825.2_ASM15282v2" "Parvularcula bermudensis HTCC2503" 1 1 1
+"GCF_000013025.1_ASM1302v1" "Hyphomonas neptunium ATCC 15444" 1 1 1
+"GCF_000023785.1_ASM2378v1" "Hirschia baltica ATCC 49814" 2 2 2
+"GCF_000014745.1_ASM1474v1" "Maricaulis maris MCS10" 2 2 2
+"GCF_000017265.1_ASM1726v1" "Phenylobacterium zucineum HLK1" 1 1 1
+"GCF_000019145.1_ASM1914v1" "Caulobacter sp. K31" 2 2.33 2
+"GCF_000092285.1_ASM9228v1" "Caulobacter segnis ATCC 21756" 2 2 2
+"GCF_000006905.1_ASM690v1" "Caulobacter crescentus CB15" 2 2 2
+"GCF_000175215.2_ASM17521v2" "Asticcacaulis excentricus CB 48" 3 3 3
+"GCF_000144605.1_ASM14460v1" "Brevundimonas subvibrioides ATCC 15264" 2 2 2
+"GCF_000016405.1_ASM1640v1" "Rhodobacter sphaeroides ATCC 17025" 4 4 4
+"GCF_000015985.1_ASM1598v1" "Rhodobacter sphaeroides ATCC 17029" 4 4 4
+"GCF_000203895.1_ASM20389v1" "Paracoccus denitrificans PD1222" 3 3 3
+"GCF_000021865.1_ASM2186v1" "Rhodobacter capsulatus SB1003" 4 4 4
+"GCF_000164885.1_ASM16488v1" "Ketogulonicigenium vulgare Y25" 5 5 5
+"GCF_000223375.1_ASM22337v1" "Ketogulonicigenium vulgare WSH-001" 5 5 5
+"GCF_000013565.1_ASM1356v1" "Jannaschia sp. CCS1" 1 1 1
+"GCF_000011965.2_ASM1196v2" "Ruegeria pomeroyi DSS-3" 3 3 3
+"GCF_000511355.1_ASM51135v1" "Leisingera methylohalidivorans MB2, DSM 14336" 5 5 5
+"GCF_000014065.1_ASM1406v1" "Ruegeria sp. TM1040" 5 5 5
+"GCF_000014045.1_ASM1404v1" "Roseobacter denitrificans OCh 114" 1 1 1
+"GCF_000017565.1_ASM1756v1" "Parvibaculum lavamentivorans DS-1" 1 1 1
+"GCF_000166055.1_ASM16605v1" "Rhodomicrobium vannielii ATCC 17100" 2 2 2
+"GCA_000230975.3_ASM23097v3" "Hyphomicrobium denitrificans 1NES1" 1 1 1
+"GCF_000143145.1_ASM14314v1" "Hyphomicrobium denitrificans ATCC 51888" 1 1 1
+"GCF_000253295.1_ASM25329v1" "Hyphomicrobium sp. MC1" 1 1 1
+"GCF_000230555.1_ASM23055v1" "Pelagibacterium halotolerans B2" 2 2 2
+"GCF_000192745.1_ASM19274v1" "Polymorphum gilvum SL003B-26A1" 2 2 2
+"GCF_000236645.1_ASM23664v1" "Pseudovibrio sp. FO-BEG1" NA 6 6
+"GCF_000014245.1_ASM1424v1" "Chelativorans sp. BNC1" 2 2 2
+"GCF_000009625.1_ASM962v1" "Mesorhizobium loti MAFF303099" 2 2 2
+"GCF_000176035.2_ASM17603v2" "Mesorhizobium opportunistum WSM2075 (final version from ORNL)" 2 2 2
+"GCA_000230995.3_ASM23099v3" "Mesorhizobium australicum WSM2073" 2 2 2
+"GCF_000185905.1_ASM18590v1" "Mesorhizobium ciceri bv. biserrulae WSM1271" 2 2 2
+"GCF_000017405.1_ASM1740v1" "Ochrobactrum anthropi ATCC 49188" 4 4 4
+"GCF_000227645.1_ASM22764v1" "Brucella melitensis bv. 3 NI" 3 3 3
+"GCF_000192725.1_ASM19272v1" "Brucella melitensis M28" 3 3 3
+"GCF_000018545.1_ASM1854v1" "Ensifer fredii NGR234" 3 3 3
+"GCF_000017145.1_ASM1714v1" "Ensifer medicae WSM419" 3 3 3
+"GCA_000147775.3_ASM14777v3" "Ensifer meliloti BL225C" 3 1.67 3
+"GCF_000016285.1_ASM1628v1" "Agrobacterium vitis bv. III S4" 4 4 4
+"GCF_000192635.1_ASM19263v1" "Agrobacterium sp. H13-3" 5 5 5
+"GCF_000092025.1_ASM9202v1" "Agrobacterium tumefaciens C58-UWash" 4 4 4
+"GCF_000021345.1_ASM2134v1" "Rhizobium leguminosarum bv. trifolii WSM2304" 3 3 3
+"GCF_000020265.1_ASM2026v1" "Rhizobium etli CIAT 652" 3 3 3
+"GCF_000092045.1_ASM9204v1" "Rhizobium etli CFN 42, DSM 11541" 3 3 3
+"GCF_000023185.1_ASM2318v1" "Rhizobium leguminosarum bv. trifolii WSM1325" 3 3 3
+"GCF_000520875.1_ASM52087v1" "Rhizobium leguminosarum bv. trifolii CB782" 3 3 3
+"GCF_000517605.1_ASM51760v1" "Rhizobium leguminosarum bv. trifolii WSM1689" 3 3 3
+"GCF_000009265.1_ASM926v1" "Rhizobium leguminosarum bv. viciae 3841" 3 3 3
+"GCF_000016265.1_ASM1626v1" "Rhizobium rhizogenes bv. II K84" 3 3 3
+"GCF_000019365.1_ASM1936v1" "Methylobacterium sp. 4-46" 6 6 6
+"GCF_000022085.1_ASM2208v1" "Methylobacterium nodulans ORS 2060" 7 7 7
+"GCF_000019725.1_ASM1972v1" "Methylobacterium radiotolerans JCM 2831" 6 6.33 6
+"GCF_000019945.1_ASM1994v1" "Methylobacterium populi BJ001" 5 5 5
+"GCF_000021845.1_ASM2184v1" "Methylobacterium chloromethanicum CM4" 5 5 5
+"GCF_000019845.1_ASM1984v1" "Beijerinckia indica indica ATCC 9039" 3 3.33 3
+"GCF_000021745.1_ASM2174v1" "Methylocella silvestris BL2, DSM 15510" 2 2 2
+"GCF_000092925.1_ASM9292v1" "Starkeya novella DSM 506" 1 1 1
+"GCF_000017645.1_ASM1764v1" "Xanthobacter autotrophicus Py2" 2 2 2
+"GCF_000010525.1_ASM1052v1" "Azorhizobium caulinodans ORS 571" 3 3 3
+"GCF_000218585.1_ASM21858v1" "Oligotropha carboxidovorans OM4" 1 1 1
+"GCF_000013885.1_ASM1388v1" "Nitrobacter hamburgensis X14" 1 1 1
+"GCF_000012725.1_ASM1272v1" "Nitrobacter winogradskyi Nb-255" 1 1 1
+"GCF_000020445.1_ASM2044v1" "Rhodopseudomonas palustris TIE-1" 2 2 2
+"GCF_000177255.2_ASM17725v2" "Rhodopseudomonas palustris DX-1" 2 2 2
+"GCF_000013685.1_ASM1368v1" "Rhodopseudomonas palustris BisB5" 2 2 2
+"GCF_000013365.1_ASM1336v1" "Rhodopseudomonas palustris HaA2" 1 1 1
+"GCF_000014825.1_ASM1482v1" "Rhodopseudomonas palustris BisA53" 2 2 2
+"GCF_000013745.1_ASM1374v1" "Rhodopseudomonas palustris BisB18" 2 2 2
+"GCF_000015165.1_ASM1516v1" "Bradyrhizobium sp. BTAi1" 2 2.33 2
+"GCF_000026145.1_ASM2614v1" "Bradyrhizobium sp. ORS278" 2 2 2
+"GCF_000011365.1_ASM1136v1" "Bradyrhizobium japonicum USDA 110" 1 1 1
+"GCF_000284375.1_ASM28437v1" "Bradyrhizobium japonicum USDA 6" 2 2 2
